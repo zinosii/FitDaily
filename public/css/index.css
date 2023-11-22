@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
+  flex-shrink: 0;
 }
 
 #main_div{
@@ -11,7 +12,7 @@
   background-size: cover;
   overflow: hidden;
   /* background-position: center; */
-  
+
 }
 
 #navigator{
@@ -44,7 +45,7 @@
   margin-left: 5%;
   /* background-color: green; */
   display: flex;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 #t3{
   color: white;
@@ -55,10 +56,11 @@
   color: gray;
   font-size: 20px;
 }
+
+/* main text, buttons */
 #main_1{
   margin-top: 100px;
   width: 550px;
-  /* background-color: #faa937; */
 }
 #main_bar{
   width: 10px;
@@ -72,7 +74,7 @@
   flex-direction: column;
 }
 /* button */
-#b1, #b2{
+#b1, #b2, #signup_button, #back_button_signup, #back_button_login{
   color: white;
   border: 0px solid;
   border-radius: 20px 0 20px 0;
@@ -89,10 +91,10 @@
   overflow: hidden;
   z-index: 0;
 }
-#b1:hover, #b2:hover{
+#b1:hover, #b2:hover, #signup_button:hover, #back_button_signup:hover, #back_button_login:hover{
   color: #faa937;
 }
-#b1::before, #b2::before{
+#b1::before, #b2::before, #signup_button::before, #back_button_signup::before, #back_button_login::before{
   content: "";
   position: absolute;
   left: 0;
@@ -104,8 +106,54 @@
   top: 0;
   border-radius: 0 0 50% 50%;
 }
-#b1:hover::before, #b2:hover::before{
+#b1:hover::before, #b2:hover::before, #signup_button:hover::before, #back_button_signup:hover::before, #back_button_login:hover::before{
   height: 190%;
+}
+
+#login_div{
+  display: none;
+  width: 590px;
+  margin-top: 100px;
+  background-color: green; 
+}
+#signup_div{
+  display: none;
+  width: 590px;
+  height: 80vh;
+  margin-top: 100px;
+  flex-direction: column;
+  align-items: center;
+}
+input:focus{
+  outline: none;
+}
+#signup_text1{
+  color: white;
+  font-size: 30px;
+  font-family: "Raleway";
+}
+#signup_bar1{
+  width: 140px;
+  height: 5px; 
+  background-color: #faa937;
+  margin: 15px 0 15px 0;
+}
+#signup_username_icon1, #signup_username_icon2, #signup_username_icon3, #signup_username_icon4{
+  position: absolute;
+  left: 7px; 
+  top: 59px;
+  transform: translateY(-50%);
+  color: #aaa; 
+}
+#signup_username, #signup_email, #signup_pw, #signup_cpw{
+  margin-top: 40px;
+  height: 40px;
+  width: 400px;
+  padding-left: 30px;
+  border: solid #f4f4f4 0px;
+  border-bottom: solid #faa937 2px;
+  background-color: rgba(0,0,0,0.25);
+  color: #f4f4f4;
 }
 
 #imgs_ver1{
@@ -184,8 +232,11 @@
   #prev2, #next2{
     display: block;
   }
+  #signup_div{
+    margin-left: calc(45vw - 295px);
+  }
 
-  @media (max-height: 650px) {
+  @media (max-height: 800px) {
     #imgs_ver2{
       display: none;
     }

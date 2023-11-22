@@ -32,4 +32,45 @@ $(document).ready(function () {
         $('#imgs_ver2').css('background-image', backgrounds[currentBackground]);
         
     });
+
+    $('#b1').click(function () {
+        $('#main_1 ,#main_bar').fadeOut(400, function(){
+            $('#login_div').fadeIn(400);
+            $('#login_div').css('display','flex');
+            $('#content_wrapper').css('height','75vh');
+        });
+
+    });
+
+    $('#b2').click(function () {
+        $('#main_1 ,#main_bar').fadeOut(400, function(){
+            $('#signup_div').fadeIn(400);
+            $('#signup_div').css('display','flex');
+            $('#content_wrapper').css('height','75vh');
+            
+        });
+
+    });
+
+    $('#back_button_login').click(function () {
+        $('#login_div').fadeOut(400, function(){
+            $('#main_bar').fadeIn(400);
+            $('#main_1').fadeIn(400);
+            $('#login_div').css('display','none');
+            $('#content_wrapper').css('height','50vh');
+            
+        });
+
+    });
+
+    $('#back_button_signup').click(function () {
+        $('#signup_div').fadeOut(400, function(){
+            $('#main_bar').fadeIn(400);
+            $('#main_1').fadeIn(400);
+            $('#signup_div').css('display','none');
+            $('#content_wrapper').css('height','50vh');
+            
+        });
+
+    });
 });
