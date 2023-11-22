@@ -1,10 +1,10 @@
 $(document).ready(function () {
     var backgrounds = [
-        'linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(/assets/eximg1.png)',
-        'linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(/assets/eximg2.png)',
-        'linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(/assets/eximg3.png)',
-        'linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(/assets/eximg4.png)',
-        'linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(/assets/eximg5.png)',
+        'linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(/assets/eximg1.png)',
+        'linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(/assets/eximg2.png)',
+        'linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(/assets/eximg3.png)',
+        'linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(/assets/eximg4.png)',
+        'linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(/assets/eximg5.png)',
     ];
 
     var currentBackground = 0;

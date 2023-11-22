@@ -18,7 +18,7 @@
   width: 90%;
   /* background-color: red; */
   margin: auto;
-  padding: 10px 0;
+  padding: 20px 0;
   display: flex;
   align-items: center;
 }
@@ -29,10 +29,12 @@
 }
 #t1{
   color: white;
+  font-family: "Raleway";
   font-size: 30px;
 }
 #t2{
   color: #faa937;
+  font-family: "Raleway";
   font-size: 30px;
 }
 
@@ -80,8 +82,32 @@
   margin-top: 25px;
   cursor: pointer;
   background-color: #faa937;
-  font-size: 16px;
+  font-size: 18px;
+  font-family: "Raleway";
+  transition: 0.5s;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
 }
+#b1:hover, #b2:hover{
+  color: #faa937;
+}
+#b1::before, #b2::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  z-index: -1;
+  background: rgba(0,0,0,0.4);
+  transition: 0.8s;
+  top: 0;
+  border-radius: 0 0 50% 50%;
+}
+#b1:hover::before, #b2:hover::before{
+  height: 190%;
+}
+
 #imgs_ver1{
   border: #faa937 5px solid;
   border-radius: 15px;
@@ -89,7 +115,7 @@
   margin-left: 40px;
   width: calc(90vw - 630px);
   height: 60vh;
-  background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('/assets/eximg1.png');
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('/assets/eximg1.png');
   background-size: cover;
   background-position: center;
 }
@@ -106,6 +132,10 @@
   border: 0;
   background-color: transparent;
   cursor: pointer;
+  transition: 0.3s;
+}
+#prev1:hover, #prev2:hover, #next1:hover, #next2:hover{
+  color: #faa9377c
 }
 
 #imgs_ver2{
@@ -115,7 +145,7 @@
   margin-left: 5vw;
   width: 90vw;
   height: 50vh;
-  background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('/assets/eximg1.png');
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('/assets/eximg1.png');
   background-size: cover;
   background-position: center;
 }
