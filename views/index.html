@@ -12,6 +12,138 @@
   <script src="/js/index.js" type="text/javascript"></script>
 </head>
 <body>
+  <!-- 데이터베이스에서 가져온 데이터 사용시, script 분리 -->
+  <script>
+    //유저데이터 가져오기
+    var users = {{ users | safe }};
+    console.log(users)
+    $(document).ready(function () {
+      $('#signup_button').click(function(){
+        
+          //every input values should be valid
+          if(isUserName($('#signup_username').val()) && 
+            isEmail($('#signup_email').val()) && 
+            isPW($('#signup_pw').val()) && 
+            isCPW($('#signup_pw').val(),$('#signup_cpw').val())
+          ){
+            //check validity of username, email
+
+            var isvalidusername=1
+            var isvalidemail=1
+
+            //1. username
+            new_username=$('#signup_username').val()
+            if (Array.isArray(users) && users.length > 0) {
+              // 데이터 루프
+              for (var i = 0; i < users.length; i++) {
+                // Column1 값과 입력 값 비교
+                if (users[i].username === new_username) {
+                  // 이미사용되는 유저네임
+                  isvalidusername=0
+                  break; // 일치하는 값이 발견되면 루프 종료
+                }
+              }
+            } else {
+              console.log('No data or invalid data received from the server.');
+            }
+
+            //2. email
+            new_email=$('#signup_email').val()
+            if (Array.isArray(users) && users.length > 0) {
+              // 데이터 루프
+              for (var i = 0; i < users.length; i++) {
+                // Column1 값과 입력 값 비교
+                if (users[i].email === new_email) {
+                  // 이미사용되는 이메일
+                  isvalidemail=0
+                  break; // 일치하는 값이 발견되면 루프 종료
+                }
+              }
+            } else {
+              console.log('No data or invalid data received from the server.');
+            }
+
+            if(!isvalidusername){
+              $('#signup_text_username').text("* Sorry, this username is already in use. Please choose another one.");
+              $(signup_username).css('border-bottom', '2px solid red');
+              $(signup_text_username).css('visibility', 'visible');
+            }
+            if(!isvalidemail){
+              $('#signup_text_email').text("* Sorry, this email is already in use. Please choose another one.");
+              $(signup_email).css('border-bottom', '2px solid red');
+              $(signup_text_email).css('visibility', 'visible');
+            }
+            
+            //sucess!!
+            if(isvalidusername && isvalidemail){
+              $('#signup_div').fadeOut(400, function(){
+              $('#signup_sucess_div').fadeIn(400);
+              $('#signup_sucess_div').css('display','flex');
+              $('#content_wrapper').css('height','50vh');
+            
+              });
+            }
+
+          }
+      });
+      
+      $('#login_button').click(function(){
+        
+        var userindex = 0;
+        var isvaliduser=0
+        input_username=$('#login_username').val()
+        input_pw=$('#login_pw').val()
+
+        //1. check username is valid
+        if (Array.isArray(users) && users.length > 0) {
+              // 데이터 루프
+              for (var i = 0; i < users.length; i++) {
+                // Column1 값과 입력 값 비교
+                if (users[i].username === input_username) {
+                  // 유저네임 존재
+                  userindex = i
+                  isvaliduser = 1
+                  break; // 일치하는 값이 발견되면 루프 종료
+                }
+              }
+            } else {
+          console.log('No data or invalid data received from the server.');
+        }
+
+        //2. match pw with username
+        if(isvaliduser){
+          if(users[userindex].password === input_pw){
+            $(login_username).css('border-bottom', '2px solid green');
+            $(login_pw).css('border-bottom', '2px solid green');
+            $(login_text_username).css('visibility', 'hidden');
+            $(login_text_pw).css('visibility', 'hidden');
+            //login success!!!
+            window.location.href = "http://localhost:8080/main";
+
+          }
+          else{
+            isvaliduser=0
+          }
+        }
+        
+
+        if(!isvaliduser){
+          $('#login_text_username').text("* Sorry, the username doesn't match.");
+          $(login_username).css('border-bottom', '2px solid red');
+          $(login_text_username).css('visibility', 'visible');
+          $('#login_text_pw').text("* Sorry, the password doesn't match.");
+          $(login_pw).css('border-bottom', '2px solid red');
+          $(login_text_pw).css('visibility', 'visible');
+        }
+        
+
+      });
+    
+    });
+
+    
+  </script>
+
   <div id="main_div">
     <div id="navigator">
       <img src="/assets/logo.png" id="logo">
@@ -35,30 +167,64 @@
       </div>
       <div id="login_div">
         <div id="login_text1">Log In</div>
+        <div id="login_bar1"></div>
+        <div style="height: 20px;"></div>
+        <form id="login_username_container" style="position: relative;">
+          <i class="fas fa-user" id="login_icon1"></i>
+          <input type="text" placeholder="Enter your username" id="login_username">
+        </form>
+        <div id="login_text_username" style="height: 34px;">* Sorry, the username doesn't match.</div>
+        
+        <form id="login_pw_container" style="position: relative;">
+          <i class="fas fa-lock" id="login_icon3"></i>
+          <input type="password" placeholder="Enter your password" id="login_pw">
+        </form>
+        <div id="login_text_pw" style="height: 34px;">* Sorry, the password doesn't match.</div>
+
+        <div style="height: 2px;"></div>
+        <button id="login_button">Log In</button>
         <button id="back_button_login">Back</button>
       </div>
       <div id="signup_div">
         <div id="signup_text1">Sign Up</div>
         <div id="signup_bar1"></div>
+        <div style="height: 20px;"></div>
         <form id="signup_username_container" style="position: relative;">
-          <i class="fas fa-user" id="signup_username_icon1"></i>
+          <i class="fas fa-user" id="signup_icon1"></i>
           <input type="text" placeholder="Enter your username" id="signup_username">
         </form>
-        <form id="signup_signup_container" style="position: relative;">
-          <i class="fas fa-envelope" id="signup_username_icon2"></i>
+        <div id="signup_text_username" style="height: 34px;">* Your username should be 5 to 20 characters in English letters and numbers.</div>
+        
+        <form id="signup_email_container" style="position: relative;">
+          <i class="fas fa-envelope" id="signup_icon2"></i>
           <input type="text" placeholder="Enter your email" id="signup_email">
         </form>
+        <div id="signup_text_email" style="height: 34px;">* Enter your valid email.<br></div>
+        
         <form id="signup_pw_container" style="position: relative;">
-          <i class="fas fa-lock" id="signup_username_icon3"></i>
+          <i class="fas fa-lock" id="signup_icon3"></i>
           <input type="password" placeholder="Enter your password" id="signup_pw">
         </form>
+        <div id="signup_text_pw" style="height: 34px;">* Your password should be 8 to 20 characters in English letters, numbers and special characters.</div>
+        
         <form id="signup_cpw_container" style="position: relative;">
-          <i class="fas fa-lock" id="signup_username_icon4"></i>
+          <i class="fas fa-lock" id="signup_icon4"></i>
           <input type="password" placeholder="Confirm your password" id="signup_cpw">
-        </form>   
-        <div style="height: 30px;"></div>
+        </form>  
+        <div id="signup_text_cpw">* Confirm your password.</div> 
+        
+        <div style="height: 2px;"></div>
         <button id="signup_button">Sign Up</button>
         <button id="back_button_signup">Back</button>
+      </div>
+      <div id="signup_sucess_div">
+        <div id="signup_sucess_text1">Congratulations!</div>
+        <div id="signup_sucess_bar1"></div>
+        <div id="signup_sucess_text2">Congratulations on joining FitDaily!</div>        
+        <div id="signup_sucess_text3">Your every day's effort will lead to a moment of brilliance.</div>
+        <div id="signup_sucess_text4">The beginning of a healthy life, let's be together!</div>
+        <div style="height: 20px;"></div>
+        <button id="back_button_signup_sucess">Back</button>
       </div>
       <div id="imgs_wrapper1">
         <div id="imgs_ver1"></div>

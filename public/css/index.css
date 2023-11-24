@@ -74,7 +74,8 @@
   flex-direction: column;
 }
 /* button */
-#b1, #b2, #signup_button, #back_button_signup, #back_button_login{
+#b1, #b2, #signup_button, #login_button, 
+#back_button_signup, #back_button_login, #back_button_signup_sucess{
   color: white;
   border: 0px solid;
   border-radius: 20px 0 20px 0;
@@ -91,10 +92,12 @@
   overflow: hidden;
   z-index: 0;
 }
-#b1:hover, #b2:hover, #signup_button:hover, #back_button_signup:hover, #back_button_login:hover{
+#b1:hover, #b2:hover, #signup_button:hover, #login_button:hover, 
+#back_button_signup:hover, #back_button_login:hover, #back_button_signup_sucess:hover{
   color: #faa937;
 }
-#b1::before, #b2::before, #signup_button::before, #back_button_signup::before, #back_button_login::before{
+#b1::before, #b2::before, #signup_button::before, #login_button::before, 
+#back_button_signup::before, #back_button_login::before, #back_button_signup_sucess::before{
   content: "";
   position: absolute;
   left: 0;
@@ -106,7 +109,9 @@
   top: 0;
   border-radius: 0 0 50% 50%;
 }
-#b1:hover::before, #b2:hover::before, #signup_button:hover::before, #back_button_signup:hover::before, #back_button_login:hover::before{
+#b1:hover::before, #b2:hover::before, #signup_button:hover::before, 
+#login_button:hover::before, #back_button_signup:hover::before, 
+#back_button_login:hover::before, #back_button_signup_sucess:hover::before{
   height: 190%;
 }
 
@@ -114,7 +119,8 @@
   display: none;
   width: 590px;
   margin-top: 100px;
-  background-color: green; 
+  flex-direction: column;
+  align-items: center;
 }
 #signup_div{
   display: none;
@@ -124,29 +130,51 @@
   flex-direction: column;
   align-items: center;
 }
+#signup_sucess_div{
+  display: none;
+  width: 590px;
+  height: 80vh;
+  margin-top: 100px;
+  flex-direction: column;
+  align-items: center;
+}
+
 input:focus{
+  background-color: #faa93735 !important;
   outline: none;
 }
-#signup_text1{
+#signup_text1, #login_text1, #signup_sucess_text1{
   color: white;
   font-size: 30px;
   font-family: "Raleway";
 }
-#signup_bar1{
+#signup_sucess_text2, #signup_sucess_text3, #signup_sucess_text4{
+  margin-top: 20px;
+  color: white;
+  font-size: 20px;
+  font-family: "Raleway";
+}
+
+#signup_bar1, #login_bar1, #signup_sucess_bar1{
   width: 140px;
   height: 5px; 
   background-color: #faa937;
   margin: 15px 0 15px 0;
 }
-#signup_username_icon1, #signup_username_icon2, #signup_username_icon3, #signup_username_icon4{
+#signup_icon1, #signup_icon2, #signup_icon3, #signup_icon4,
+#login_icon1, #login_icon2, #login_icon3, #login_icon4{
   position: absolute;
   left: 7px; 
-  top: 59px;
+  top: 28px;
   transform: translateY(-50%);
   color: #aaa; 
 }
-#signup_username, #signup_email, #signup_pw, #signup_cpw{
-  margin-top: 40px;
+
+/* input tags */
+#signup_username, #signup_email, #signup_pw, #signup_cpw,
+#login_username, #login_email, #login_pw, #login_cpw{
+  margin-top: 8px;
+  margin-bottom: 8px;
   height: 40px;
   width: 400px;
   padding-left: 30px;
@@ -155,6 +183,17 @@ input:focus{
   background-color: rgba(0,0,0,0.25);
   color: #f4f4f4;
 }
+
+/* texts */
+#signup_text_username, #signup_text_email, 
+#signup_text_pw, #signup_text_cpw,
+#login_text_username, #login_text_pw{
+  color: rgba(255, 0, 0, 0.702);
+  font-size: 15px;
+  width: 420px;
+  visibility: hidden;
+}
+
 
 #imgs_ver1{
   border: #faa937 5px solid;
@@ -190,7 +229,7 @@ input:focus{
   display: none;
   border: #faa937 5px solid;
   border-radius: 15px;
-  margin-left: 5vw;
+  margin-left: calc(5vw - 5px);
   width: 90vw;
   height: 50vh;
   background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('/assets/eximg1.png');
@@ -232,7 +271,7 @@ input:focus{
   #prev2, #next2{
     display: block;
   }
-  #signup_div{
+  #signup_div, #login_div, #signup_sucess_div{ 
     margin-left: calc(45vw - 295px);
   }
 
