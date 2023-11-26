@@ -30,7 +30,7 @@ router.get('/', function(req, res, next) {
       console.error('Error executing query:', queryErr);
       return;
     }
-
+  
   const resultsString = JSON.stringify(results);
   
   res.render('index.html',{users:resultsString});
@@ -38,3 +38,40 @@ router.get('/', function(req, res, next) {
   });
   
 });
+
+router.use(express.urlencoded({ extended: true }));
+router.use(express.json());
+
+router.post('/', (req, res) => {
+  const getIdQuery = 'SELECT MAX(id) AS maxId FROM users'
+  
+  
+  connection.query(getIdQuery, (error, results, fields) => {
+    if (error) throw error;
+
+
+    const id = results[0].maxId + 1;
+    const username = req.body.username; 
+    const email = req.body.email; 
+    const password = req.body.password; 
+    const created_at = new Date();
+    console.log(id,username,email,password,created_at)
+
+    const dataToInsert = { id: id, username: username, email: email, password: password, created_at: created_at };
+    const query = 'INSERT INTO users SET ?';
+    
+    connection.query(query, dataToInsert, (error, results, fields) => {
+        if (error) throw error;
+        console.log('데이터가 성공적으로 삽입되었습니다.');
+
+    });
+
+
+    res.send('데이터가 성공적으로 전송되었습니다.');
+
+    });
+
+  
+
+});
+

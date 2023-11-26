@@ -17,6 +17,9 @@
     //유저데이터 가져오기
     var users = {{ users | safe }};
     console.log(users)
+
+  
+
     $(document).ready(function () {
       $('#signup_button').click(function(){
         
@@ -74,8 +77,25 @@
               $(signup_text_email).css('visibility', 'visible');
             }
             
-            //sucess!!
+            //signup sucess!!
             if(isvalidusername && isvalidemail){
+              new_password=$('#signup_pw').val()
+
+              //데이터베이스에 저장해야함 
+              $.ajax({
+                  type: 'POST',  
+                  url: '/',  // 실제 서버 엔드포인트 URL로 변경
+                  data: { username: new_username, email: new_email, password: new_password },
+                  contentType: 'application/x-www-form-urlencoded', 
+                  success: function(response) {
+                    users.push({ username: new_username, email: new_email, password: new_password })
+                    console.log(users)
+                      //console.log('서버 응답:', response);
+                  },
+                  error: function(error) {
+                      console.error('에러 발생:', error);
+                  }
+              });
               $('#signup_div').fadeOut(400, function(){
               $('#signup_sucess_div').fadeIn(400);
               $('#signup_sucess_div').css('display','flex');
@@ -118,7 +138,7 @@
             $(login_text_username).css('visibility', 'hidden');
             $(login_text_pw).css('visibility', 'hidden');
             //login success!!!
-            window.location.href = "http://localhost:8080/main";
+            window.location.href = "https://port-0-fitdaily-3szcb0g2blp6shext.sel5.cloudtype.app/main";
 
           }
           else{
