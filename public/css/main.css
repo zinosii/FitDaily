@@ -11,7 +11,6 @@
     background-size: cover;
     overflow: hidden;
     /* background-position: center; */
-  
 }
 #navigator{
     width: 90%;
@@ -23,7 +22,15 @@
     justify-content: space-between;
     #background-color: green;
 }
-
+#footer{
+    width: 90%;
+    /* background-color: red; */
+    padding: 20px 0;
+    margin: auto;
+    #display: flex;
+    color: white;
+    font-size: 14.5px;
+}
 #logo{
     width: 50px;
     height: 50px;
@@ -55,7 +62,6 @@
 #main_wrapper{
     width: 90vw;
     /* height: 90%; */
-    
     margin: auto;
     display: flex;
 }
@@ -63,13 +69,13 @@
 #left_bar{
     min-width: max(25vw,115px);
     min-height: max(600px, 100vh);
-    background-color: skyblue;
+    /* background-color: skyblue; */
 }
 
 #contents{
     min-width: max(65vw,300px);
     min-height: max(600px, 100vh);
-    background-color: purple;
+    /* background-color: purple; */
 }
 
 #btn_ov, #btn_wo, #btn_cal, #btn_fr{
@@ -84,3 +90,26 @@
 #btn_ov{
     background-color: #faa93735;
 }
+
+
+
+/* overview */
+#ov1{
+    height: 140px;
+    border-radius: 30px;
+    padding: 20px;
+    margin: 0px 0px 0px 20px;
+    background-image: linear-gradient(to right, #faa937aa,rgba(0, 0, 0, 0.95)),url('/assets/ov_img1.png');
+    background-size: cover;
+    overflow: hidden;
+    background-position: center;
+    font-family: "Raleway";
+    color: white;
+}
+#ov1_t1{
+    color: white;
+    font-size: 30px;
+    font-family: "Raleway";
+}
+
+
