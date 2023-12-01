@@ -138,7 +138,10 @@
             $(login_text_username).css('visibility', 'hidden');
             $(login_text_pw).css('visibility', 'hidden');
             //login success!!!
-            window.location.href = "https://port-0-fitdaily-3szcb0g2blp6shext.sel5.cloudtype.app/main";
+            setTimeout(function() {
+              window.location.href = "https://port-0-fitdaily-3szcb0g2blp6shext.sel5.cloudtype.app/main?user="+input_username;
+            }, 800);
+            
 
           }
           else{

@@ -42,6 +42,13 @@ $(document).ready(function () {
             $('#login_div').css('display','flex');
             $('#content_wrapper').css('height','60vh');
         });
+        $('#login_username').val("");
+        $('#login_pw').val("");
+        $('#login_username').css('border-bottom', '2px solid #faa937');
+        $('#login_pw').css('border-bottom', '2px solid #faa937');
+        $(login_text_username).css('visibility', 'hidden');
+        $(login_text_pw).css('visibility', 'hidden');
+        
 
     });
 
@@ -51,6 +58,18 @@ $(document).ready(function () {
             $('#signup_div').css('display','flex');
             $('#content_wrapper').css('height','75vh');
         });
+        $('#signup_username').val("");
+        $('#signup_pw').val("");
+        $('#signup_email').val("");
+        $('#signup_cpw').val("");
+        $('#signup_email').css('border-bottom', '2px solid #faa937');
+        $('#signup_pw').css('border-bottom', '2px solid #faa937');
+        $('#signup_username').css('border-bottom', '2px solid #faa937');
+        $('#signup_cpw').css('border-bottom', '2px solid #faa937');
+        $(signup_text_username).css('visibility', 'hidden');
+        $(signup_text_pw).css('visibility', 'hidden');
+        $(signup_text_email).css('visibility', 'hidden');
+        $(signup_text_cpw).css('visibility', 'hidden');
     });
 
     $('#back_button_login').click(function () {
