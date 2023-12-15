@@ -24,18 +24,29 @@ module.exports = router;
 
 router.get('/', function(req, res, next) {
 
-  //get users data, for check the new register
+  //get users, users_data
   connection.query('SELECT * FROM users_data', (queryErr, results) => {
     if (queryErr) {
       console.error('Error executing query:', queryErr);
       return;
     }
 
-  const resultsString = JSON.stringify(results);
-  //console.log('Query results:', resultsString);
+    const users_data = JSON.stringify(results);
+
+    connection.query('SELECT * FROM users', (queryErr, results) => {
+      if (queryErr) {
+        console.error('Error executing query:', queryErr);
+        return;
+      }
   
-  res.render('main.html',{users:resultsString});
-  //connection.end()
+      const users = JSON.stringify(results);
+      
+      res.render('main.html',{users_data:users_data,users:users});
+
+    });
+
+    
   });
   
 });
+

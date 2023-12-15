@@ -41,8 +41,8 @@
                 <div id="btn_cal">
                     &nbsp;&nbsp;Callendar
                 </div>
-                <div id="btn_fr">
-                    &nbsp;&nbsp;Friends
+                <div id="btn_st">
+                    &nbsp;&nbsp;Statistics
                 </div>
                 <div id="btn_co">
                     &nbsp;&nbsp;Contact
@@ -50,6 +50,7 @@
             </div>
             <div id="contents">
                 <div style="height: 30px;"></div>
+
                 <!-- 1. overview -->
                 <div id="ov_wpr">
                     <!-- overview contents -->
@@ -163,6 +164,7 @@
                     </div>
 
                 </div>
+
                 <!-- 2. Personal Info -->
                 <div id="pi_wpr">
                     <div id="pi1">
@@ -191,6 +193,7 @@
                     </div>
 
                 </div>
+
                 <!-- 3. workout -->
                 <div id="wo_wpr">
                     <!-- workout contents -->
@@ -202,8 +205,15 @@
                         <input type="text" id="search-box" placeholder="Search exercises...">
                         <button id="search-btn">Search</button>
                     </div>
+                    <div class="search-container" id="wo3">
+                        <button id="left-arrow"><i class="fas fa-chevron-left"></i></button>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button id="right-arrow"><i class="fas fa-chevron-right"></i></button>
+                        <!-- <button class="arrow left-arrow">Left</button>
+                        <button class="arrow right-arrow">Right</button> -->
+                    </div>
                     <div class="carousel">
-                        <button class="arrow left-arrow">Left</button>
+                        
                         <div class="wo_container" id="wo_container_1">
                         </div>
                         <div class="wo_container" id="wo_container_2" style="display: none;">
@@ -315,10 +325,11 @@
                             <div class="wo_title" id="wo_20_1">Treadmill</div>
                             <div class="hover-text">Cardio exercise simulating walking or running.</div>
                         </div>
-                        <button class="arrow right-arrow">Right</button>
+                        
                     </div>
 
                 </div>
+
                 <!-- 4. callendar -->
                 <div id="ca_wpr">
                     <!-- callendar contents -->
@@ -346,7 +357,7 @@
                             </div>
 
                             <div id="detail_ED">
-                                Excercise Duration : 
+                                <div style="width: 180px;">Excercise Duration : </div>
                                 <div style="display: flex; margin: -5px 0px 0px 5px;">
                                     <div id="ED_1"><i class="fas fa-tired"></i></div>
                                     <div id="ED_2"><i class="fas fa-frown"></i></div>
@@ -356,36 +367,36 @@
                                 </div>                                
                             </div>
 
-                            <div id="detail_ED">
-                                Excercise Duration : 
+                            <div id="detail_EI">
+                                <div style="width: 180px;">Excercise Intensity : </div>
                                 <div style="display: flex; margin: -5px 0px 0px 5px;">
-                                    <div id="ED_1"><i class="fas fa-tired"></i></div>
-                                    <div id="ED_2"><i class="fas fa-frown"></i></div>
-                                    <div id="ED_3"><i class="fas fa-meh"></i></div>
-                                    <div id="ED_4"><i class="fas fa-smile"></i></div>
-                                    <div id="ED_5"><i class="fas fa-laugh-beam"></i></div>
+                                    <div id="EI_1"><i class="fas fa-tired"></i></div>
+                                    <div id="EI_2"><i class="fas fa-frown"></i></div>
+                                    <div id="EI_3"><i class="fas fa-meh"></i></div>
+                                    <div id="EI_4"><i class="fas fa-smile"></i></div>
+                                    <div id="EI_5"><i class="fas fa-laugh-beam"></i></div>
                                 </div>                                
                             </div>
 
-                            <div id="detail_ED">
-                                Excercise Duration : 
+                            <div id="detail_PC">
+                                <div style="width: 180px;">Physical Condition : </div>
                                 <div style="display: flex; margin: -5px 0px 0px 5px;">
-                                    <div id="ED_1"><i class="fas fa-tired"></i></div>
-                                    <div id="ED_2"><i class="fas fa-frown"></i></div>
-                                    <div id="ED_3"><i class="fas fa-meh"></i></div>
-                                    <div id="ED_4"><i class="fas fa-smile"></i></div>
-                                    <div id="ED_5"><i class="fas fa-laugh-beam"></i></div>
+                                    <div id="PC_1"><i class="fas fa-tired"></i></div>
+                                    <div id="PC_2"><i class="fas fa-frown"></i></div>
+                                    <div id="PC_3"><i class="fas fa-meh"></i></div>
+                                    <div id="PC_4"><i class="fas fa-smile"></i></div>
+                                    <div id="PC_5"><i class="fas fa-laugh-beam"></i></div>
                                 </div>                                
                             </div>
 
-                            <div id="detail_ED">
-                                Excercise Duration : 
+                            <div id="detail_MD">
+                                <div style="width: 180px;">Mood of the Day : </div>
                                 <div style="display: flex; margin: -5px 0px 0px 5px;">
-                                    <div id="ED_1"><i class="fas fa-tired"></i></div>
-                                    <div id="ED_2"><i class="fas fa-frown"></i></div>
-                                    <div id="ED_3"><i class="fas fa-meh"></i></div>
-                                    <div id="ED_4"><i class="fas fa-smile"></i></div>
-                                    <div id="ED_5"><i class="fas fa-laugh-beam"></i></div>
+                                    <div id="MD_1"><i class="fas fa-tired"></i></div>
+                                    <div id="MD_2"><i class="fas fa-frown"></i></div>
+                                    <div id="MD_3"><i class="fas fa-meh"></i></div>
+                                    <div id="MD_4"><i class="fas fa-smile"></i></div>
+                                    <div id="MD_5"><i class="fas fa-laugh-beam"></i></div>
                                 </div>                                
                             </div>
 
@@ -396,11 +407,11 @@
                                 <textarea id="TC_textarea" placeholder="Write your comment!"></textarea>
                             </form>
                             
-                            <div id="detail_TC">
-                                Today's Comment
+                            <div id="detail_SC">
+                                Schedule                            
                             </div>
                             <form>
-                                <textarea id="TC_textarea" placeholder="Write your schedule!"></textarea>
+                                <textarea id="SC_textarea" placeholder="Write your schedule!"></textarea>
                             </form>
 
                             <div id="detail_btns">
@@ -537,7 +548,7 @@
                                 <!-- SC -->
                                 <div id="mon_sch_wr" style="width: 400px;">
                                     Schedule :
-                                    <div id="mon_cmm">Today was really great. oday was really great.</div>
+                                    <div id="mon_sch">Today was really great. oday was really great.</div>
                                 </div>
 
                                 <div style="width: calc(90% - 690px); height: 50px; display: flex; justify-content: end; align-items: end;">
@@ -601,7 +612,7 @@
                                 <!-- SC -->
                                 <div id="tue_sch_wr" style="width: 400px;">
                                     Schedule :
-                                    <div id="tue_cmm">Today was really great. oday was really great.</div>
+                                    <div id="tue_sch">Today was really great. oday was really great.</div>
                                 </div>
 
                                 <div style="width: calc(90% - 690px); height: 50px; display: flex; justify-content: end; align-items: end;">
@@ -665,7 +676,7 @@
                                 <!-- SC -->
                                 <div id="wed_sch_wr" style="width: 400px;">
                                     Schedule :
-                                    <div id="wed_cmm">Today was really great. oday was really great.</div>
+                                    <div id="wed_sch">Today was really great. oday was really great.</div>
                                 </div>
 
                                 <div style="width: calc(90% - 690px); height: 50px; display: flex; justify-content: end; align-items: end;">
@@ -729,7 +740,7 @@
                                 <!-- SC -->
                                 <div id="thu_sch_wr" style="width: 400px;">
                                     Schedule :
-                                    <div id="thu_cmm">Today was really great. oday was really great.</div>
+                                    <div id="thu_sch">Today was really great. oday was really great.</div>
                                 </div>
 
                                 <div style="width: calc(90% - 690px); height: 50px; display: flex; justify-content: end; align-items: end;">
@@ -793,7 +804,7 @@
                                 <!-- SC -->
                                 <div id="fri_sch_wr" style="width: 400px;">
                                     Schedule :
-                                    <div id="fri_cmm">Today was really great. oday was really great.</div>
+                                    <div id="fri_sch">Today was really great. oday was really great.</div>
                                 </div>
 
                                 <div style="width: calc(90% - 690px); height: 50px; display: flex; justify-content: end; align-items: end;">
@@ -857,7 +868,7 @@
                                 <!-- SC -->
                                 <div id="sat_sch_wr" style="width: 400px;">
                                     Schedule :
-                                    <div id="sat_cmm">Today was really great. oday was really great.</div>
+                                    <div id="sat_sch">Today was really great. oday was really great.</div>
                                 </div>
 
                                 <div style="width: calc(90% - 690px); height: 50px; display: flex; justify-content: end; align-items: end;">
@@ -872,12 +883,12 @@
                     </div>
                 </div>
 
-                <!-- 5. friend -->
-                <div id="fr_wpr">
-                    <!-- friend contents -->
-                    <div id="fr1">
-                        <div id="fr_t1">December 2023</div>
-                        Track Your Daily Activities & Workout !!
+                <!-- 5. statistics -->
+                <div id="st_wpr">
+                    <!-- statistic contents -->
+                    <div id="st1">
+                        <div id="st1_t1">Statistics only for you</div>
+                        <div id="st1_t2">Get valuable insights based on your exercise records.</div>
                     </div>
                 </div>
 
@@ -919,6 +930,7 @@
                     
                     
                 </div>
+                
             </div>
             
         </div>
@@ -933,14 +945,26 @@
     <script>
         
 
+        var users_data = {{ users_data | safe }};
         var users = {{ users | safe }};
-        userData = users[0]
-
+        
+        
+        var userindex=0
+        
+    
         url = String(window.location.href);
         user = url.split("=")[1]
 
+        for(i=0;i<users.length;i++){
+            if(users[i]['username'] == user){
+                userindex=i
+            }
+        }
+        
+        userData = users_data[userindex]
+
         $("#nav1_2").text(user)
-        console.log(user)
+        //console.log(userindex)
 
         //handle emo section
         function checkWindowSize() {
@@ -1112,17 +1136,35 @@
             }
         }
 
-       //update with DB
-       function updateDiary(week_num){
-            dateList = [['231203','231204','231205','231206','231207','231208','231209'],
-                        ['231210','231211','231212','231213','231214','231215','231216'],
-                        ['231217','231218','231219','231220','231221','231222','231223'],
-                        ['231224','231225','231226','231227','231228','231229','231230'],
-                        ['231231','240101','240102','240103','240104','240105','240106'],
-                        ['240107','240108','240109','240110','240111','240112','240113'],
-                        ['240114','240115','240116','240117','240118','240119','240120'],
-                        ['240121','240122','240123','240124','240125','240126','240127'],
-                        ['240128','240129','240130','240131','240201','240202','240203']]
+        dateList = [['231203','231204','231205','231206','231207','231208','231209'],
+                    ['231210','231211','231212','231213','231214','231215','231216'],
+                    ['231217','231218','231219','231220','231221','231222','231223'],
+                    ['231224','231225','231226','231227','231228','231229','231230'],
+                    ['231231','240101','240102','240103','240104','240105','240106'],
+                    ['240107','240108','240109','240110','240111','240112','240113'],
+                    ['240114','240115','240116','240117','240118','240119','240120'],
+                    ['240121','240122','240123','240124','240125','240126','240127'],
+                    ['240128','240129','240130','240131','240201','240202','240203']]
+
+        ED=2
+        EI=2
+        PC=2
+        MD=2
+        DAY=0
+
+        //update with DB
+        function updateDiary(week_num){
+            
+            
+            fetch('/getData')
+            .then(response => response.json())
+            .then(data => {
+                
+                userData = JSON.parse(data)[userindex]
+            
+            })
+            .catch(error => console.error('Error fetching data:', error));
+
 
             emoList = ['<i class="fas fa-tired"></i>',
                        '<i class="fas fa-frown"></i>',
@@ -1132,7 +1174,9 @@
 
             weekdata = dateList[week_num]
             
-            if(userData[weekdata[0]]){
+            
+            //Sunday 
+            if(userData[weekdata[0]]!=null){
                 $('#ca_sun').css({
                     'background-color': '#faa93775',
                     'border': '#faa937 solid',                    
@@ -1152,14 +1196,25 @@
                 $('#sun_sch').text(stringArray[5]);
 
                 
-
                 $('#ca_sun_abbr').css({
                     'visibility': 'visible'
                 });
-
-
             }
-            if(userData[weekdata[1]]){
+            else{
+                $('#ca_sun').css({
+                    'background-color': 'rgba(128, 128, 128, 0.7)',
+                    'border': '#faa93775 solid',
+                    'border-width': '5px 0px 0px 0px',
+                    'border-bottom-left-radius': '20px',
+                    'border-bottom-right-radius': '20px'
+                });
+                $('#ca_sun_abbr').css({
+                    'visibility': 'hidden'
+                });
+            }
+            
+            //Monday 
+            if(userData[weekdata[1]]!=null){
                 $('#ca_mon').css({
                     'background-color': '#faa93775',
                     'border': '#faa937 solid',                    
@@ -1167,10 +1222,254 @@
                     'border-bottom-left-radius': '20px',
                     'border-bottom-right-radius': '20px'
                 });
+
+                var inputString = userData[weekdata[1]]
+                var stringArray = inputString.split('\\n');
+
+                $('#mon_emo1').html(emoList[parseInt(stringArray[0])]);
+                $('#mon_emo2').html(emoList[parseInt(stringArray[1])]);
+                $('#mon_emo3').html(emoList[parseInt(stringArray[2])]);
+                $('#mon_emo4').html(emoList[parseInt(stringArray[3])]);
+                $('#mon_cmm').text(stringArray[4]);
+                $('#mon_sch').text(stringArray[5]);
+
+                
+                $('#ca_mon_abbr').css({
+                    'visibility': 'visible'
+                });
+            }
+            else{
+                $('#ca_mon').css({
+                    'background-color': 'rgba(128, 128, 128, 0.7)',
+                    'border': '#faa93775 solid',
+                    'border-width': '5px 0px 0px 0px',
+                    'border-bottom-left-radius': '20px',
+                    'border-bottom-right-radius': '20px'
+                });
+                $('#ca_mon_abbr').css({
+                    'visibility': 'hidden'
+                });
             }
             
+            //Tueday 
+            if(userData[weekdata[2]]!=null){
+                
+                $('#ca_tue').css({
+                    'background-color': '#faa93775',
+                    'border': '#faa937 solid',                    
+                    'border-width': '5px 0px 0px 0px',
+                    'border-bottom-left-radius': '20px',
+                    'border-bottom-right-radius': '20px'
+                });
 
+                var inputString = userData[weekdata[2]]
+                var stringArray = inputString.split('\\n');
+
+                $('#tue_emo1').html(emoList[parseInt(stringArray[0])]);
+                $('#tue_emo2').html(emoList[parseInt(stringArray[1])]);
+                $('#tue_emo3').html(emoList[parseInt(stringArray[2])]);
+                $('#tue_emo4').html(emoList[parseInt(stringArray[3])]);
+                $('#tue_cmm').text(stringArray[4]);
+                $('#tue_sch').text(stringArray[5]);
+
+                
+                $('#ca_tue_abbr').css({
+                    'visibility': 'visible'
+                });
+            }
+            else{
+                $('#ca_tue').css({
+                    'background-color': 'rgba(128, 128, 128, 0.7)',
+                    'border': '#faa93775 solid',
+                    'border-width': '5px 0px 0px 0px',
+                    'border-bottom-left-radius': '20px',
+                    'border-bottom-right-radius': '20px'
+                });
+                $('#ca_tue_abbr').css({
+                    'visibility': 'hidden'
+                });
+            }
+            
+            //wedday 
+            if(userData[weekdata[3]]!=null){
+                $('#ca_wed').css({
+                    'background-color': '#faa93775',
+                    'border': '#faa937 solid',                    
+                    'border-width': '5px 0px 0px 0px',
+                    'border-bottom-left-radius': '20px',
+                    'border-bottom-right-radius': '20px'
+                });
+
+                var inputString = userData[weekdata[3]]
+                var stringArray = inputString.split('\\n');
+
+                $('#wed_emo1').html(emoList[parseInt(stringArray[0])]);
+                $('#wed_emo2').html(emoList[parseInt(stringArray[1])]);
+                $('#wed_emo3').html(emoList[parseInt(stringArray[2])]);
+                $('#wed_emo4').html(emoList[parseInt(stringArray[3])]);
+                $('#wed_cmm').text(stringArray[4]);
+                $('#wed_sch').text(stringArray[5]);
+
+                
+                $('#ca_wed_abbr').css({
+                    'visibility': 'visible'
+                });
+            }
+            else{
+                $('#ca_wed').css({
+                    'background-color': 'rgba(128, 128, 128, 0.7)',
+                    'border': '#faa93775 solid',
+                    'border-width': '5px 0px 0px 0px',
+                    'border-bottom-left-radius': '20px',
+                    'border-bottom-right-radius': '20px'
+                });
+                $('#ca_wed_abbr').css({
+                    'visibility': 'hidden'
+                });
+            }
+            
+            //Thuday 
+            if(userData[weekdata[4]]!=null){
+                $('#ca_thu').css({
+                    'background-color': '#faa93775',
+                    'border': '#faa937 solid',                    
+                    'border-width': '5px 0px 0px 0px',
+                    'border-bottom-left-radius': '20px',
+                    'border-bottom-right-radius': '20px'
+                });
+
+                var inputString = userData[weekdata[4]]
+                var stringArray = inputString.split('\\n');
+
+                $('#thu_emo1').html(emoList[parseInt(stringArray[0])]);
+                $('#thu_emo2').html(emoList[parseInt(stringArray[1])]);
+                $('#thu_emo3').html(emoList[parseInt(stringArray[2])]);
+                $('#thu_emo4').html(emoList[parseInt(stringArray[3])]);
+                $('#thu_cmm').text(stringArray[4]);
+                $('#thu_sch').text(stringArray[5]);
+
+                
+                $('#ca_thu_abbr').css({
+                    'visibility': 'visible'
+                });
+            }
+            else{
+                $('#ca_thu').css({
+                    'background-color': 'rgba(128, 128, 128, 0.7)',
+                    'border': '#faa93775 solid',
+                    'border-width': '5px 0px 0px 0px',
+                    'border-bottom-left-radius': '20px',
+                    'border-bottom-right-radius': '20px'
+                });
+                $('#ca_thu_abbr').css({
+                    'visibility': 'hidden'
+                });
+            }
+            
+            //friday 
+            if(userData[weekdata[5]]!=null){
+                $('#ca_fri').css({
+                    'background-color': '#faa93775',
+                    'border': '#faa937 solid',                    
+                    'border-width': '5px 0px 0px 0px',
+                    'border-bottom-left-radius': '20px',
+                    'border-bottom-right-radius': '20px'
+                });
+
+                var inputString = userData[weekdata[5]]
+                var stringArray = inputString.split('\\n');
+
+                $('#fri_emo1').html(emoList[parseInt(stringArray[0])]);
+                $('#fri_emo2').html(emoList[parseInt(stringArray[1])]);
+                $('#fri_emo3').html(emoList[parseInt(stringArray[2])]);
+                $('#fri_emo4').html(emoList[parseInt(stringArray[3])]);
+                $('#fri_cmm').text(stringArray[4]);
+                $('#fri_sch').text(stringArray[5]);
+
+                
+                $('#ca_fri_abbr').css({
+                    'visibility': 'visible'
+                });
+            }
+            else{
+                $('#ca_fri').css({
+                    'background-color': 'rgba(128, 128, 128, 0.7)',
+                    'border': '#faa93775 solid',
+                    'border-width': '5px 0px 0px 0px',
+                    'border-bottom-left-radius': '20px',
+                    'border-bottom-right-radius': '20px'
+                });
+                $('#ca_fri_abbr').css({
+                    'visibility': 'hidden'
+                });
+            }
+            
+            //Satday 
+            if(userData[weekdata[6]]!=null){
+                $('#ca_sat').css({
+                    'background-color': '#faa93775',
+                    'border': '#faa937 solid',                    
+                    'border-width': '5px 0px 0px 0px',
+                    'border-bottom-left-radius': '20px',
+                    'border-bottom-right-radius': '20px'
+                });
+
+                var inputString = userData[weekdata[6]]
+                var stringArray = inputString.split('\\n');
+
+                $('#sat_emo1').html(emoList[parseInt(stringArray[0])]);
+                $('#sat_emo2').html(emoList[parseInt(stringArray[1])]);
+                $('#sat_emo3').html(emoList[parseInt(stringArray[2])]);
+                $('#sat_emo4').html(emoList[parseInt(stringArray[3])]);
+                $('#sat_cmm').text(stringArray[4]);
+                $('#sat_sch').text(stringArray[5]);
+
+                
+                $('#ca_sat_abbr').css({
+                    'visibility': 'visible'
+                });
+            }
+            else{
+                $('#ca_sat').css({
+                    'background-color': 'rgba(128, 128, 128, 0.7)',
+                    'border': '#faa93775 solid',
+                    'border-width': '5px 0px 0px 0px',
+                    'border-bottom-left-radius': '20px',
+                    'border-bottom-right-radius': '20px'
+                });
+                $('#ca_sat_abbr').css({
+                    'visibility': 'hidden'
+                });
+            }
+            
+        
         } 
+       
+        //DB insertion 
+        function insertUserDiary(week_num,Newdate){
+            //console.log(ED,EI,PC,MD,$('#TC_textarea').val(),$('#SC_textarea').val())
+
+            date=String(Newdate.getYear()).slice(1,3) + String(parseInt(Newdate.getMonth())+1) + (String(Newdate.getDate()).length==1?'0':'') + String(parseInt(Newdate.getDate())+DAY+1)
+
+            
+            contents = String(ED+'\\n'+EI+'\\n'+PC+'\\n'+MD+'\\n'+$('#TC_textarea').val()+'\\n'+$('#SC_textarea').val())
+            
+            $.ajax({
+                type: 'POST',  
+                url: '/main',  // 실제 서버 엔드포인트 URL로 변경
+                data: { userindex: userindex, date: date, contents: contents },
+                contentType: 'application/x-www-form-urlencoded', 
+                success: function(response) {
+                    console.log('서버 응답:', response);
+                },
+                error: function(error) {
+                    console.error('에러 발생:', error);
+                }
+            });
+            
+            
+
+        }
 
         window.onload = checkWindowSize;
         window.onresize = checkWindowSize;
@@ -1178,11 +1477,41 @@
         $(document).ready(function() {
             
             //Callendar part
+            updateDiary(0)
             $('#sun_edit, #mon_edit, #tue_edit, #wed_edit, #thu_edit, #fri_edit, #sat_edit').click(function () {
                 canClickPrevNext = 0 
                 $('#ca_sun, #ca_mon, #ca_tue, #ca_wed, #ca_thu, #ca_fri, #ca_sat').fadeOut(400, function(){
                     $('#ca_detail_wr').fadeIn(400);
                 });
+            });
+
+            $('#sun_edit').click(function () {
+                DAY = 0
+                $('#ca_detail_t1').text('Sun ' + dateList[week_num][0].slice(2,4)+'. '+(parseInt(dateList[week_num][0][4])?dateList[week_num][0].slice(4,6):dateList[week_num][0].slice(5,6)));
+            });
+            $('#mon_edit').click(function () {
+                DAY = 1
+                $('#ca_detail_t1').text('Mon ' + dateList[week_num][1].slice(2,4)+'. '+(parseInt(dateList[week_num][1][4])?dateList[week_num][1].slice(4,6):dateList[week_num][1].slice(5,6)));
+            });
+            $('#tue_edit').click(function () {
+                DAY = 2
+                $('#ca_detail_t1').text('Tue ' + dateList[week_num][2].slice(2,4)+'. '+(parseInt(dateList[week_num][2][4])?dateList[week_num][2].slice(4,6):dateList[week_num][2].slice(5,6)));
+            });
+            $('#wed_edit').click(function () {
+                DAY = 3
+                $('#ca_detail_t1').text('Wed ' + dateList[week_num][3].slice(2,4)+'. '+(parseInt(dateList[week_num][3][4])?dateList[week_num][3].slice(4,6):dateList[week_num][3].slice(5,6)));
+            });
+            $('#thu_edit').click(function () {
+                DAY = 4
+                $('#ca_detail_t1').text('Thu ' + dateList[week_num][4].slice(2,4)+'. '+(parseInt(dateList[week_num][4][4])?dateList[week_num][4].slice(4,6):dateList[week_num][4].slice(5,6)));
+            });
+            $('#fri_edit').click(function () {
+                DAY = 5
+                $('#ca_detail_t1').text('Fri ' + dateList[week_num][5].slice(2,4)+'. '+(parseInt(dateList[week_num][5][4])?dateList[week_num][5].slice(4,6):dateList[week_num][5].slice(5,6)));
+            });
+            $('#sat_edit').click(function () {
+                DAY = 6
+                $('#ca_detail_t1').text('Sat ' + dateList[week_num][6].slice(2,4)+'. '+(parseInt(dateList[week_num][6][4])?dateList[week_num][6].slice(4,6):dateList[week_num][6].slice(5,6)));
             });
 
             $('#detail_cancel').click(function () {
@@ -1193,61 +1522,187 @@
             });
 
             $('#detail_update').click(function () {
-                updateDiary(week_num)
-                canClickPrevNext = 1
+
+                //DB insertion
                 var day = $('#ca_detail_t1').text()
-                console.log(week_num, Newdate, day)
+                insertUserDiary(week_num, Newdate)
+
+                canClickPrevNext = 1
+                
+                updateDiary(week_num)
+
+                
                 $('#ca_detail_wr').fadeOut(400, function(){
+                    updateDiary(week_num)
                     $('#ca_sun, #ca_mon, #ca_tue, #ca_wed, #ca_thu, #ca_fri, #ca_sat').fadeIn(400);
                 });
             });
 
-            $('#send_feedback').click(function() {
-                // Get the value from the textarea
-                var comment = $('#FB_textarea').val();
-
-                // Print the comment to the console
-                console.log(comment);
-
-                // Clear the textarea
-                $('#FB_textarea').val('');
+            //choose emo, input comment
+            $('#ED_1').click(function () {
+                ED=0
+                $("#ED_1").css("border", "3px solid #faa937");
+                $("#ED_2").css("border", "3px solid white");
+                $("#ED_3").css("border", "3px solid white");
+                $("#ED_4").css("border", "3px solid white");
+                $("#ED_5").css("border", "3px solid white");
+            });
+            $('#ED_2').click(function () {
+                ED=1
+                $("#ED_2").css("border", "3px solid #faa937");
+                $("#ED_1").css("border", "3px solid white");
+                $("#ED_3").css("border", "3px solid white");
+                $("#ED_4").css("border", "3px solid white");
+                $("#ED_5").css("border", "3px solid white");
+            });
+            $('#ED_3').click(function () {
+                ED=2
+                $("#ED_3").css("border", "3px solid #faa937");
+                $("#ED_2").css("border", "3px solid white");
+                $("#ED_1").css("border", "3px solid white");
+                $("#ED_4").css("border", "3px solid white");
+                $("#ED_5").css("border", "3px solid white");
+            });
+            $('#ED_4').click(function () {
+                ED=3
+                $("#ED_4").css("border", "3px solid #faa937");
+                $("#ED_1").css("border", "3px solid white");
+                $("#ED_3").css("border", "3px solid white");
+                $("#ED_2").css("border", "3px solid white");
+                $("#ED_5").css("border", "3px solid white");
+            });
+            $('#ED_5').click(function () {
+                ED=4
+                $("#ED_5").css("border", "3px solid #faa937");
+                $("#ED_1").css("border", "3px solid white");
+                $("#ED_3").css("border", "3px solid white");
+                $("#ED_2").css("border", "3px solid white");
+                $("#ED_4").css("border", "3px solid white");
             });
 
-            $('#submitBtn_now').click(function() {
-                // Get the values from the text inputs
-                var value1 = $('#now_weight').val();
-                var value2 = $('#now_muscle').val();
-
-                // Log the values to the console
-                console.log('Input 1:', value1);
-                console.log('Input 2:', value2);
-
-                // Update the placeholders with the entered values
-                $('#now_weight').attr('placeholder', value1+'kg');
-                $('#now_muscle').attr('placeholder', value2+'kg');
-
-                // Clear the text inputs
-                $('#now_weight').val('');
-                $('#now_muscle').val('');
+            $('#EI_1').click(function () {
+                EI=0
+                $("#EI_1").css("border", "3px solid #faa937");
+                $("#EI_2").css("border", "3px solid white");
+                $("#EI_3").css("border", "3px solid white");
+                $("#EI_4").css("border", "3px solid white");
+                $("#EI_5").css("border", "3px solid white");
+            });
+            $('#EI_2').click(function () {
+                EI=1
+                $("#EI_2").css("border", "3px solid #faa937");
+                $("#EI_1").css("border", "3px solid white");
+                $("#EI_3").css("border", "3px solid white");
+                $("#EI_4").css("border", "3px solid white");
+                $("#EI_5").css("border", "3px solid white");
+            });
+            $('#EI_3').click(function () {
+                EI=2
+                $("#EI_3").css("border", "3px solid #faa937");
+                $("#EI_2").css("border", "3px solid white");
+                $("#EI_1").css("border", "3px solid white");
+                $("#EI_4").css("border", "3px solid white");
+                $("#EI_5").css("border", "3px solid white");
+            });
+            $('#EI_4').click(function () {
+                EI=3
+                $("#EI_4").css("border", "3px solid #faa937");
+                $("#EI_1").css("border", "3px solid white");
+                $("#EI_3").css("border", "3px solid white");
+                $("#EI_2").css("border", "3px solid white");
+                $("#EI_5").css("border", "3px solid white");
+            });
+            $('#EI_5').click(function () {
+                EI=4
+                $("#EI_5").css("border", "3px solid #faa937");
+                $("#EI_1").css("border", "3px solid white");
+                $("#EI_3").css("border", "3px solid white");
+                $("#EI_2").css("border", "3px solid white");
+                $("#EI_4").css("border", "3px solid white");
             });
 
-            $('#submitBtn_target').click(function() {
-                // Get the values from the text inputs
-                var value1 = $('#target_weight').val();
-                var value2 = $('#target_muscle').val();
-
-                // Log the values to the console
-                console.log('Input 1:', value1);
-                console.log('Input 2:', value2);
-
-                // Update the placeholders with the entered values
-                $('#target_weight').attr('placeholder', value1+'kg');
-                $('#target_muscle').attr('placeholder', value2+'kg');
-
-                // Clear the text inputs
-                $('#target_weight').val('');
-                $('#target_muscle').val('');
+            $('#PC_1').click(function () {
+                PC=0
+                $("#PC_1").css("border", "3px solid #faa937");
+                $("#PC_2").css("border", "3px solid white");
+                $("#PC_3").css("border", "3px solid white");
+                $("#PC_4").css("border", "3px solid white");
+                $("#PC_5").css("border", "3px solid white");
             });
+            $('#PC_2').click(function () {
+                PC=1
+                $("#PC_2").css("border", "3px solid #faa937");
+                $("#PC_1").css("border", "3px solid white");
+                $("#PC_3").css("border", "3px solid white");
+                $("#PC_4").css("border", "3px solid white");
+                $("#PC_5").css("border", "3px solid white");
+            });
+            $('#PC_3').click(function () {
+                PC=2
+                $("#PC_3").css("border", "3px solid #faa937");
+                $("#PC_2").css("border", "3px solid white");
+                $("#PC_1").css("border", "3px solid white");
+                $("#PC_4").css("border", "3px solid white");
+                $("#PC_5").css("border", "3px solid white");
+            });
+            $('#PC_4').click(function () {
+                PC=3
+                $("#PC_4").css("border", "3px solid #faa937");
+                $("#PC_1").css("border", "3px solid white");
+                $("#PC_3").css("border", "3px solid white");
+                $("#PC_2").css("border", "3px solid white");
+                $("#PC_5").css("border", "3px solid white");
+            });
+            $('#PC_5').click(function () {
+                PC=4
+                $("#PC_5").css("border", "3px solid #faa937");
+                $("#PC_1").css("border", "3px solid white");
+                $("#PC_3").css("border", "3px solid white");
+                $("#PC_2").css("border", "3px solid white");
+                $("#PC_4").css("border", "3px solid white");
+            });
+
+            $('#MD_1').click(function () {
+                MD=0
+                $("#MD_1").css("border", "3px solid #faa937");
+                $("#MD_2").css("border", "3px solid white");
+                $("#MD_3").css("border", "3px solid white");
+                $("#MD_4").css("border", "3px solid white");
+                $("#MD_5").css("border", "3px solid white");
+            });
+            $('#MD_2').click(function () {
+                MD=1
+                $("#MD_2").css("border", "3px solid #faa937");
+                $("#MD_1").css("border", "3px solid white");
+                $("#MD_3").css("border", "3px solid white");
+                $("#MD_4").css("border", "3px solid white");
+                $("#MD_5").css("border", "3px solid white");
+            });
+            $('#MD_3').click(function () {
+                MD=2
+                $("#MD_3").css("border", "3px solid #faa937");
+                $("#MD_2").css("border", "3px solid white");
+                $("#MD_1").css("border", "3px solid white");
+                $("#MD_4").css("border", "3px solid white");
+                $("#MD_5").css("border", "3px solid white");
+            });
+            $('#MD_4').click(function () {
+                MD=3
+                $("#MD_4").css("border", "3px solid #faa937");
+                $("#MD_1").css("border", "3px solid white");
+                $("#MD_3").css("border", "3px solid white");
+                $("#MD_2").css("border", "3px solid white");
+                $("#MD_5").css("border", "3px solid white");
+            });
+            $('#MD_5').click(function () {
+                MD=4
+                $("#MD_5").css("border", "3px solid #faa937");
+                $("#MD_1").css("border", "3px solid white");
+                $("#MD_3").css("border", "3px solid white");
+                $("#MD_2").css("border", "3px solid white");
+                $("#MD_4").css("border", "3px solid white");
+            });
+
 
             //we made Dec 2nd ~ Feb 1st (9weeks, 63days)
             var canClickPrevNext = 1
@@ -1272,7 +1727,7 @@
                     return
                 }
 
-                $('#ca_sun, #ca_mon, #ca_tue, #ca_wed, #ca_thu, #ca_fri, #ca_sat').fadeOut(400, function(){
+                $('#ca_sun, #ca_mon, #ca_tue, #ca_wed, #ca_thu, #ca_fri, #ca_sat').fadeOut(1, function(){
                     $('#ca_sun_t1').html('Sun ' + (parseInt(Newdate.getDate()+0)>=31 ? (parseInt(Newdate.getMonth()) + 1)%12+1 : (parseInt(Newdate.getMonth()) + 0)%12+1) + '. ' + parseInt(parseInt(Newdate.getDate()+0)%31+1));
                     $('#ca_mon_t1').html('Mon ' + (parseInt(Newdate.getDate()+1)>=31 ? (parseInt(Newdate.getMonth()) + 1)%12+1 : (parseInt(Newdate.getMonth()) + 0)%12+1) + '. ' + parseInt(parseInt(Newdate.getDate()+1)%31+1));
                     $('#ca_tue_t1').html('Tue ' + (parseInt(Newdate.getDate()+2)>=31 ? (parseInt(Newdate.getMonth()) + 1)%12+1 : (parseInt(Newdate.getMonth()) + 0)%12+1) + '. ' + parseInt(parseInt(Newdate.getDate()+2)%31+1));
@@ -1280,7 +1735,7 @@
                     $('#ca_thu_t1').html('Thu ' + (parseInt(Newdate.getDate()+4)>=31 ? (parseInt(Newdate.getMonth()) + 1)%12+1 : (parseInt(Newdate.getMonth()) + 0)%12+1) + '. ' + parseInt(parseInt(Newdate.getDate()+4)%31+1));
                     $('#ca_fri_t1').html('Fri ' + (parseInt(Newdate.getDate()+5)>=31 ? (parseInt(Newdate.getMonth()) + 1)%12+1 : (parseInt(Newdate.getMonth()) + 0)%12+1) + '. ' + parseInt(parseInt(Newdate.getDate()+5)%31+1));
                     $('#ca_sat_t1').html('Sat ' + (parseInt(Newdate.getDate()+6)>=31 ? (parseInt(Newdate.getMonth()) + 1)%12+1 : (parseInt(Newdate.getMonth()) + 0)%12+1) + '. ' + parseInt(parseInt(Newdate.getDate()+6)%31+1));
-                    $('#ca_sun, #ca_mon, #ca_tue, #ca_wed, #ca_thu, #ca_fri, #ca_sat').fadeIn(400);
+                    $('#ca_sun, #ca_mon, #ca_tue, #ca_wed, #ca_thu, #ca_fri, #ca_sat').fadeIn(1);
                 });
 
                 week_num -= 1;
@@ -1293,7 +1748,7 @@
                 Newdate.setDate(Newdate.getDate() - 7);
                 
                 
-                
+                updateDiary(week_num)
                 
 
             });
@@ -1306,7 +1761,7 @@
                     return
                 }
 
-                $('#ca_sun, #ca_mon, #ca_tue, #ca_wed, #ca_thu, #ca_fri, #ca_sat').fadeOut(400, function(){
+                $('#ca_sun, #ca_mon, #ca_tue, #ca_wed, #ca_thu, #ca_fri, #ca_sat').fadeOut(1, function(){
                     $('#ca_sun_t1').html('Sun ' + (parseInt(Newdate.getDate()+0)>=31 ? (parseInt(Newdate.getMonth()) + 1)%12+1 : (parseInt(Newdate.getMonth()) + 0)%12+1) + '. ' + parseInt(parseInt(Newdate.getDate()+0)%31+1));
                     $('#ca_mon_t1').html('Mon ' + (parseInt(Newdate.getDate()+1)>=31 ? (parseInt(Newdate.getMonth()) + 1)%12+1 : (parseInt(Newdate.getMonth()) + 0)%12+1) + '. ' + parseInt(parseInt(Newdate.getDate()+1)%31+1));
                     $('#ca_tue_t1').html('Tue ' + (parseInt(Newdate.getDate()+2)>=31 ? (parseInt(Newdate.getMonth()) + 1)%12+1 : (parseInt(Newdate.getMonth()) + 0)%12+1) + '. ' + parseInt(parseInt(Newdate.getDate()+2)%31+1));
@@ -1314,7 +1769,7 @@
                     $('#ca_thu_t1').html('Thu ' + (parseInt(Newdate.getDate()+4)>=31 ? (parseInt(Newdate.getMonth()) + 1)%12+1 : (parseInt(Newdate.getMonth()) + 0)%12+1) + '. ' + parseInt(parseInt(Newdate.getDate()+4)%31+1));
                     $('#ca_fri_t1').html('Fri ' + (parseInt(Newdate.getDate()+5)>=31 ? (parseInt(Newdate.getMonth()) + 1)%12+1 : (parseInt(Newdate.getMonth()) + 0)%12+1) + '. ' + parseInt(parseInt(Newdate.getDate()+5)%31+1));
                     $('#ca_sat_t1').html('Sat ' + (parseInt(Newdate.getDate()+6)>=31 ? (parseInt(Newdate.getMonth()) + 1)%12+1 : (parseInt(Newdate.getMonth()) + 0)%12+1) + '. ' + parseInt(parseInt(Newdate.getDate()+6)%31+1));
-                    $('#ca_sun, #ca_mon, #ca_tue, #ca_wed, #ca_thu, #ca_fri, #ca_sat').fadeIn(400);
+                    $('#ca_sun, #ca_mon, #ca_tue, #ca_wed, #ca_thu, #ca_fri, #ca_sat').fadeIn(1);
                 });
 
                 week_num += 1;
@@ -1325,7 +1780,8 @@
 
               
                 Newdate.setDate(Newdate.getDate() + 7);
-                
+
+                updateDiary(week_num)
                 
                 
             });
@@ -1334,58 +1790,96 @@
             $("#ov_wpr").css("display", "block");
             $("#ca_wpr").css("display", "none");
             $("#wo_wpr").css("display", "none");
-            $("#fr_wpr").css("display", "none");
+            $("#st_wpr").css("display", "none");
             $("#co_wpr").css("display", "none");
             $("#pi_wpr").css("display", "none");
+            $("#btn_ov").css("background-color",'#faa93735');
+
 
             
             $("#btn_ov").click(function() {
                 $("#ov_wpr").css("display", "block");
                 $("#ca_wpr").css("display", "none");
                 $("#wo_wpr").css("display", "none");
-                $("#fr_wpr").css("display", "none");
+                $("#st_wpr").css("display", "none");
                 $("#co_wpr").css("display", "none");
                 $("#pi_wpr").css("display", "none");
+                $(this).css("background-color",'#faa93735');
+                $("#btn_cal").css("background-color",'');
+                $("#btn_wo").css("background-color",'');
+                $("#btn_st").css("background-color",'');
+                $("#btn_co").css("background-color",'');
+                $("#btn_pi").css("background-color",'');
             });
             $("#btn_cal").click(function() {
                 $("#ov_wpr").css("display", "none");
                 $("#ca_wpr").css("display", "block");
                 $("#wo_wpr").css("display", "none");
-                $("#fr_wpr").css("display", "none");
+                $("#st_wpr").css("display", "none");
                 $("#co_wpr").css("display", "none");
                 $("#pi_wpr").css("display", "none");
+                $("#btn_ov").css("background-color",'');
+                $(this).css("background-color",'#faa93735');
+                $("#btn_wo").css("background-color",'');
+                $("#btn_st").css("background-color",'');
+                $("#btn_co").css("background-color",'');
+                $("#btn_pi").css("background-color",'');
             });
             $("#btn_wo").click(function() {
                 $("#ov_wpr").css("display", "none");
                 $("#ca_wpr").css("display", "none");
                 $("#wo_wpr").css("display", "block");
-                $("#fr_wpr").css("display", "none");
+                $("#st_wpr").css("display", "none");
                 $("#co_wpr").css("display", "none");
                 $("#pi_wpr").css("display", "none");
+                $("#btn_ov").css("background-color",'');
+                $("#btn_cal").css("background-color",'');
+                $("#btn_wo").css("background-color",'#faa93735');
+                $("#btn_st").css("background-color",'');
+                $("#btn_co").css("background-color",'');
+                $("#btn_pi").css("background-color",'');
             });
-            $("#btn_fr").click(function() {
+            $("#btn_st").click(function() {
                 $("#ov_wpr").css("display", "none");
                 $("#ca_wpr").css("display", "none");
                 $("#wo_wpr").css("display", "none");
-                $("#fr_wpr").css("display", "block");
+                $("#st_wpr").css("display", "block");
                 $("#co_wpr").css("display", "none");
                 $("#pi_wpr").css("display", "none");
+                $("#btn_ov").css("background-color",'');
+                $("#btn_cal").css("background-color",'');
+                $("#btn_wo").css("background-color",'');
+                $("#btn_st").css("background-color",'#faa93735');
+                $("#btn_co").css("background-color",'');
+                $("#btn_pi").css("background-color",'');
             });
             $("#btn_co").click(function() {
                 $("#ov_wpr").css("display", "none");
                 $("#ca_wpr").css("display", "none");
                 $("#wo_wpr").css("display", "none");
-                $("#fr_wpr").css("display", "none");
+                $("#st_wpr").css("display", "none");
                 $("#co_wpr").css("display", "block");
                 $("#pi_wpr").css("display", "none");
+                $("#btn_ov").css("background-color",'');
+                $("#btn_cal").css("background-color",'');
+                $("#btn_wo").css("background-color",'');
+                $("#btn_st").css("background-color",'');
+                $("#btn_co").css("background-color",'#faa93735');
+                $("#btn_pi").css("background-color",'');
             });
             $("#btn_pi").click(function() {
                 $("#ov_wpr").css("display", "none");
                 $("#ca_wpr").css("display", "none");
                 $("#wo_wpr").css("display", "none");
-                $("#fr_wpr").css("display", "none");
+                $("#st_wpr").css("display", "none");
                 $("#co_wpr").css("display", "none");
                 $("#pi_wpr").css("display", "block");
+                $("#btn_ov").css("background-color",'');
+                $("#btn_cal").css("background-color",'');
+                $("#btn_wo").css("background-color",'');
+                $("#btn_st").css("background-color",'');
+                $("#btn_co").css("background-color",'');
+                $("#btn_pi").css("background-color",'#faa93735');
             });
 
             // overview scrpits
@@ -1540,18 +2034,72 @@
             
             
 
-            $('.left-arrow').click(function() {
+            $('#left-arrow').click(function() {
                 if (currentIndex > 1) {
                     currentIndex--;
                     updateVisibility();
                 }
             });
 
-            $('.right-arrow').click(function() {
+            $('#right-arrow').click(function() {
                 if (currentIndex < (allExercises_length / 4)) { // Assuming there are 5 containers
                     currentIndex++;
                     updateVisibility();
                 }
+            });
+
+
+
+
+
+
+            //contact part
+
+            $('#send_feedback').click(function() {
+                // Get the value from the textarea
+                var comment = $('#FB_textarea').val();
+
+                // Print the comment to the console
+                console.log(comment);
+
+                // Clear the textarea
+                $('#FB_textarea').val('');
+            });
+
+            $('#submitBtn_now').click(function() {
+                // Get the values from the text inputs
+                var value1 = $('#now_weight').val();
+                var value2 = $('#now_muscle').val();
+
+                // Log the values to the console
+                console.log('Input 1:', value1);
+                console.log('Input 2:', value2);
+
+                // Update the placeholders with the entered values
+                $('#now_weight').attr('placeholder', value1+'kg');
+                $('#now_muscle').attr('placeholder', value2+'kg');
+
+                // Clear the text inputs
+                $('#now_weight').val('');
+                $('#now_muscle').val('');
+            });
+
+            $('#submitBtn_target').click(function() {
+                // Get the values from the text inputs
+                var value1 = $('#target_weight').val();
+                var value2 = $('#target_muscle').val();
+
+                // Log the values to the console
+                console.log('Input 1:', value1);
+                console.log('Input 2:', value2);
+
+                // Update the placeholders with the entered values
+                $('#target_weight').attr('placeholder', value1+'kg');
+                $('#target_muscle').attr('placeholder', value2+'kg');
+
+                // Clear the text inputs
+                $('#target_weight').val('');
+                $('#target_muscle').val('');
             });
 
         });
