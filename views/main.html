@@ -32,6 +32,9 @@
                 <div id="btn_ov">
                     &nbsp;&nbsp;Overview
                 </div>
+                <div id="btn_pi">
+                    &nbsp;&nbsp;Personal Info
+                </div>
                 <div id="btn_wo">
                     &nbsp;&nbsp;Workout
                 </div>
@@ -47,7 +50,6 @@
             </div>
             <div id="contents">
                 <div style="height: 30px;"></div>
-
                 <!-- 1. overview -->
                 <div id="ov_wpr">
                     <!-- overview contents -->
@@ -161,8 +163,35 @@
                     </div>
 
                 </div>
+                <!-- 2. Personal Info -->
+                <div id="pi_wpr">
+                    <div id="pi1">
+                        <div id="pi1_t1">Personal Info</div>
+                        Set your workout goals, and achieve them!
+                    </div>
+                    <div class="pi-container" id="pi2">
+                        <div id="pi2_now" class="info_box">
+                            <div id="pi2_now_t1" class="pi2_info_text">Your Health Status</div>
+                            <img src="assets\pi_img1.png" alt="now">
+                            <div id="pi2_now_1" class="pi_text">
+                                <input type="text" id="now_weight" placeholder="Enter your current body weight (kg)">
+                                <input type="text" id="now_muscle" placeholder="Enter your current muscle amount (kg)">
+                                <button id="submitBtn_now" class="submitBtn">Submit</button>
+                            </div>
+                        </div>
+                        <div id="pi2_target" class="info_box">
+                            <div id="pi2_target_t1" class="pi2_info_text">Your Target Status</div>
+                            <img src="assets\pi_img2.png" alt="target">
+                            <div id="pi2_target_1" class="pi_text">
+                                <input type="text" id="target_weight" placeholder="Enter your target body weight (kg)">
+                                <input type="text" id="target_muscle" placeholder="Enter your target muscle amount (kg)">
+                                <button id="submitBtn_target" class="submitBtn">Submit</button>
+                            </div>
+                        </div>
+                    </div>
 
-                <!-- 2. workout -->
+                </div>
+                <!-- 3. workout -->
                 <div id="wo_wpr">
                     <!-- workout contents -->
                     <div id="wo1">
@@ -290,7 +319,7 @@
                     </div>
 
                 </div>
-                <!-- 3. callendar -->
+                <!-- 4. callendar -->
                 <div id="ca_wpr">
                     <!-- callendar contents -->
                     <div id="ca">
@@ -443,7 +472,7 @@
                                 <!-- SC -->
                                 <div id="sun_sch_wr" style="width: 400px;">
                                     Schedule :
-                                    <div id="sun_cmm">Today was really great. oday was really great.</div>
+                                    <div id="sun_sch">Today was really great. oday was really great.</div>
                                 </div>
 
                                 <div style="width: calc(90% - 690px); height: 50px; display: flex; justify-content: end; align-items: end;">
@@ -843,7 +872,7 @@
                     </div>
                 </div>
 
-                <!-- 4. friend -->
+                <!-- 5. friend -->
                 <div id="fr_wpr">
                     <!-- friend contents -->
                     <div id="fr1">
@@ -851,7 +880,8 @@
                         Track Your Daily Activities & Workout !!
                     </div>
                 </div>
-                <!-- 5. contact -->
+
+                <!-- 6. contact -->
                 <div id="co_wpr">
                     <!-- contact contents -->
                     <div id="co1">
@@ -861,10 +891,33 @@
                         
                     </div>
                     <div id="co2">
-                        <div id="co2_t1">
-                            <br>Jinho Park. jinho142857@gmail.com<br> Jihwan Kim. navvh3@gmail.com
+                        <div id="co2_t1" class="personal_stat">
+                            <img src="/assets/co_img2.png" alt="Jinho Park">
+                            <br> Jinho <br>jinho142857@gmail.com
+                            <br> Suwon, Korea
+                            <div class="co2_bio"></div>
+                        </div>
+                        <div id="co2_t2" class="personal_stat">
+                            <img src="/assets/co_img3.png" alt="Jihwan Kim">
+                            <br> Jihwan <br>navvh3@gmail.com
+                            <br> Suwon, Korea
+                            <div class="co2_bio"></div>
                         </div>
                     </div>
+                    <div id="detail_FB">
+                        Please tell us about your message
+                    </div>
+                    <form>
+                        <textarea id="FB_textarea" placeholder="Write your comment!"></textarea>
+                    </form>
+                    <div id="send_cont">
+                        <button id="send_feedback">
+                            Send
+                        </button>
+
+                    </div>
+                    
+                    
                 </div>
             </div>
             
@@ -1059,9 +1112,8 @@
             }
         }
 
-
-        //update with DB
-        function updateDiary(week_num){
+       //update with DB
+       function updateDiary(week_num){
             dateList = [['231203','231204','231205','231206','231207','231208','231209'],
                         ['231210','231211','231212','231213','231214','231215','231216'],
                         ['231217','231218','231219','231220','231221','231222','231223'],
@@ -1071,6 +1123,12 @@
                         ['240114','240115','240116','240117','240118','240119','240120'],
                         ['240121','240122','240123','240124','240125','240126','240127'],
                         ['240128','240129','240130','240131','240201','240202','240203']]
+
+            emoList = ['<i class="fas fa-tired"></i>',
+                       '<i class="fas fa-frown"></i>',
+                       '<i class="fas fa-meh"></i>',
+                       '<i class="fas fa-smile"></i>',
+                       '<i class="fas fa-laugh-beam"></i>']
 
             weekdata = dateList[week_num]
             
@@ -1086,10 +1144,14 @@
                 var inputString = userData[weekdata[0]]
                 var stringArray = inputString.split('\\n');
 
-                console.log(stringArray);
-                // if(stringArray[0]=='1'){
-                //     $('#ca_sun_emo1').contents() = '<i class="fas fa-smile"></i>';
-                // }
+                $('#sun_emo1').html(emoList[parseInt(stringArray[0])]);
+                $('#sun_emo2').html(emoList[parseInt(stringArray[1])]);
+                $('#sun_emo3').html(emoList[parseInt(stringArray[2])]);
+                $('#sun_emo4').html(emoList[parseInt(stringArray[3])]);
+                $('#sun_cmm').text(stringArray[4]);
+                $('#sun_sch').text(stringArray[5]);
+
+                
 
                 $('#ca_sun_abbr').css({
                     'visibility': 'visible'
@@ -1138,6 +1200,53 @@
                 $('#ca_detail_wr').fadeOut(400, function(){
                     $('#ca_sun, #ca_mon, #ca_tue, #ca_wed, #ca_thu, #ca_fri, #ca_sat').fadeIn(400);
                 });
+            });
+
+            $('#send_feedback').click(function() {
+                // Get the value from the textarea
+                var comment = $('#FB_textarea').val();
+
+                // Print the comment to the console
+                console.log(comment);
+
+                // Clear the textarea
+                $('#FB_textarea').val('');
+            });
+
+            $('#submitBtn_now').click(function() {
+                // Get the values from the text inputs
+                var value1 = $('#now_weight').val();
+                var value2 = $('#now_muscle').val();
+
+                // Log the values to the console
+                console.log('Input 1:', value1);
+                console.log('Input 2:', value2);
+
+                // Update the placeholders with the entered values
+                $('#now_weight').attr('placeholder', value1+'kg');
+                $('#now_muscle').attr('placeholder', value2+'kg');
+
+                // Clear the text inputs
+                $('#now_weight').val('');
+                $('#now_muscle').val('');
+            });
+
+            $('#submitBtn_target').click(function() {
+                // Get the values from the text inputs
+                var value1 = $('#target_weight').val();
+                var value2 = $('#target_muscle').val();
+
+                // Log the values to the console
+                console.log('Input 1:', value1);
+                console.log('Input 2:', value2);
+
+                // Update the placeholders with the entered values
+                $('#target_weight').attr('placeholder', value1+'kg');
+                $('#target_muscle').attr('placeholder', value2+'kg');
+
+                // Clear the text inputs
+                $('#target_weight').val('');
+                $('#target_muscle').val('');
             });
 
             //we made Dec 2nd ~ Feb 1st (9weeks, 63days)
@@ -1227,6 +1336,7 @@
             $("#wo_wpr").css("display", "none");
             $("#fr_wpr").css("display", "none");
             $("#co_wpr").css("display", "none");
+            $("#pi_wpr").css("display", "none");
 
             
             $("#btn_ov").click(function() {
@@ -1235,6 +1345,7 @@
                 $("#wo_wpr").css("display", "none");
                 $("#fr_wpr").css("display", "none");
                 $("#co_wpr").css("display", "none");
+                $("#pi_wpr").css("display", "none");
             });
             $("#btn_cal").click(function() {
                 $("#ov_wpr").css("display", "none");
@@ -1242,6 +1353,7 @@
                 $("#wo_wpr").css("display", "none");
                 $("#fr_wpr").css("display", "none");
                 $("#co_wpr").css("display", "none");
+                $("#pi_wpr").css("display", "none");
             });
             $("#btn_wo").click(function() {
                 $("#ov_wpr").css("display", "none");
@@ -1249,6 +1361,7 @@
                 $("#wo_wpr").css("display", "block");
                 $("#fr_wpr").css("display", "none");
                 $("#co_wpr").css("display", "none");
+                $("#pi_wpr").css("display", "none");
             });
             $("#btn_fr").click(function() {
                 $("#ov_wpr").css("display", "none");
@@ -1256,6 +1369,7 @@
                 $("#wo_wpr").css("display", "none");
                 $("#fr_wpr").css("display", "block");
                 $("#co_wpr").css("display", "none");
+                $("#pi_wpr").css("display", "none");
             });
             $("#btn_co").click(function() {
                 $("#ov_wpr").css("display", "none");
@@ -1263,6 +1377,15 @@
                 $("#wo_wpr").css("display", "none");
                 $("#fr_wpr").css("display", "none");
                 $("#co_wpr").css("display", "block");
+                $("#pi_wpr").css("display", "none");
+            });
+            $("#btn_pi").click(function() {
+                $("#ov_wpr").css("display", "none");
+                $("#ca_wpr").css("display", "none");
+                $("#wo_wpr").css("display", "none");
+                $("#fr_wpr").css("display", "none");
+                $("#co_wpr").css("display", "none");
+                $("#pi_wpr").css("display", "block");
             });
 
             // overview scrpits
@@ -1438,3 +1561,4 @@
 
 </body>
 </html>
+        

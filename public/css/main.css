@@ -75,7 +75,7 @@
     /* background-color: purple; */
 }
 
-#btn_ov, #btn_wo, #btn_cal, #btn_fr, #btn_co{
+#btn_ov, #btn_wo, #btn_cal, #btn_fr, #btn_co, #btn_pi{
     font-family: "Raleway";
     font-size: 20px;
     color: white;
@@ -108,6 +108,7 @@
     color: white;
     font-size: 30px;
     font-family: "Raleway";
+    font-weight: bold;
 }
 
 #ov2{
@@ -280,29 +281,109 @@
     font-family: "Raleway";
 }
 
+/* personal info */
+#pi_wpr{
+    display:none;
+}
+
+#pi1{
+    min-height: max(20vh,140px); /* to make reactive webpage */
+    border-radius: 30px;
+    padding: 20px;
+    margin: 0px 0px 0px 20px;
+    background-image: linear-gradient(to right, #faa937aa,rgba(0, 0, 0, 0.95)),url('/assets/wo_img1.jpg'); 
+    background-size: cover;
+    overflow: hidden;
+    background-position: center;
+    font-family: "Raleway";
+    color: white;
+    text-align: left;
+}
+
+#pi1_t1{
+    color: white;
+    font-size: 30px;
+    font-family: "Raleway";
+    font-weight: bold;
+}
+
+.pi-container{
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0px 0px 20px;
+}
+
+.info_box{
+    width: 100%;
+    min-height: max(150px, 25vh);
+    border-radius: 20px;
+    padding: 10px;
+    margin: 0px 5px 0px 0px;
+    background-color: #ff950086;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pi2_info_text{
+    color: white;
+    font-size: 120%;
+    font-family: "Raleway";
+}
+
+.info_box img{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    width: max(80px, 2vw);
+    height: max(80px, 3vh);
+}
+
+#pi2_now_1 input[type="text"], #pi2_target_1 input[type="text"] {
+    padding: 8px;
+    margin: 5px;
+    width: calc(100% - 20px); /* Adjust the width as needed */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* #pi2_now_1 button, #pi2_target_1 button {
+    padding: 10px 15px;
+    margin: 5px;
+    background-color: #a16004;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+} */
+
+
+
+
 /* workout */
 #wo_wpr{
     display: none;
 }
 #wo1{
-    height: 80px;
+    min-height: max(20vh,140px); /* to make reactive webpage */
     border-radius: 30px;
-    padding: 0px;
+    padding: 20px;
     margin: 0px 0px 0px 20px;
-    /* background-image: linear-gradient(to right, #faa937aa,rgba(0, 0, 0, 0.95)),url('/assets/wo_img1.jpg'); */
-    /* background-size: cover; */
-    /* overflow: hidden; */
-    /* background-position: center; */
+    background-image: linear-gradient(to right, #faa937aa,rgba(0, 0, 0, 0.95)),url('/assets/wo_img1.jpg');
+    background-size: cover;
+    overflow: hidden;
+    background-position: center;
     font-family: "Raleway";
     color: white;
-    text-align: center;
+    text-align: left;
 }
 #wo1_t1{
     color: white;
     font-size: 30px;
     font-family: "Raleway";
+    font-weight: bold;
 }
 .search-container {
+    
     margin: 10px;
     text-align: center;
 }
@@ -326,6 +407,7 @@
 }
 
 .carousel {
+    margin: 0px 0px 0px 20px;
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -439,7 +521,7 @@
     font-weight: bold;
     font-size: 25px;
 }
-#detail_ED, #detail_TC{
+#detail_ED, #detail_TC, #detail_FB{
     display: flex;
     margin-left: 10px;
     margin-top: 40px;
@@ -452,7 +534,7 @@
     margin: 0px 4px 0px 4px; border: 3px solid white; padding: 3px 15px 3px 15px; border-radius: 10px;
 }
 
-#TC_textarea{
+#TC_textarea, #FB_textarea{
     margin-left: 10px;
     margin-top: 10px;
     width: calc(100% - 42px);
@@ -469,7 +551,7 @@
 
 }
 
-#detail_btns{
+#detail_btns, #send_cont{
     margin-left: 10px;
     margin-top: 35px;
     display: flex;
@@ -477,7 +559,7 @@
     width: calc(100% - 20px);
 }
 
-#detail_cancel, #detail_update{
+#detail_cancel, #detail_update, #send_feedback, .submitBtn{
     color: white;
     border: 0px solid;
     border-radius: 13px 0 13px 0;
@@ -493,7 +575,7 @@
     overflow: hidden;
     z-index: 0;
 }
-#detail_cancel:before, #detail_update:before{
+#detail_cancel:before, #detail_update:before, #send_feedback:before, .submitBtn:before{
     content: "";
     position: absolute;
     left: 0;
@@ -505,7 +587,7 @@
     top: 0;
     border-radius: 0 0 50% 50%;
 }
-#detail_cancel:hover::before, #detail_update:hover::before{
+#detail_cancel:hover::before, #detail_update:hover::before, #send_feedback:hover::before, .submitBtn:hover::before{
     height: 190%;
 }
 
@@ -536,17 +618,14 @@
 #sun_t, #mon_t, #tue_t, #wed_t, #thu_t, #fri_t, #sat_t{
     font-family: "Raleway";
 }
-#sun_cmm_wr, #mon_cmm_wr, #tue_cmm_wr, #wed_cmm_wr, #thu_cmm_wr, #fri_cmm_wr, #sat_cmm_wr{
-    margin-left: 2vw;
-    margin-top: -21.5px;
-    font-family: "Raleway";
-}
+#sun_cmm_wr, #mon_cmm_wr, #tue_cmm_wr, #wed_cmm_wr, #thu_cmm_wr, #fri_cmm_wr, #sat_cmm_wr,
 #sun_sch_wr, #mon_sch_wr, #tue_sch_wr, #wed_sch_wr, #thu_sch_wr, #fri_sch_wr, #sat_sch_wr{
     margin-left: 2vw;
     margin-top: -21.5px;
     font-family: "Raleway";
 }
-#sun_cmm, #mon_cmm, #tue_cmm, #wed_cmm, #thu_cmm, #fri_cmm, #sat_cmm{
+#sun_cmm, #mon_cmm, #tue_cmm, #wed_cmm, #thu_cmm, #fri_cmm, #sat_cmm,
+#sun_sch, #mon_sch, #tue_sch, #wed_sch, #thu_sch, #fri_sch, #sat_sch{
     margin-top: 3px;
     font-family: "Raleway";
     min-width: 200px;
@@ -555,14 +634,6 @@
     cursor: pointer;
     visibility: visible !important;
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -582,7 +653,7 @@
     background-position: center; /* Center the image in the div */
     background-repeat: no-repeat; /* Prevent the image from repeating */
     overflow: hidden;
-    min-height: max(200px,25vh); /* Set the height as required */
+    min-height: max(20vh,140px); /* to make reactive webpage */
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -593,7 +664,6 @@
     font-size: 200%;
     font-family: "Raleway";
     font-weight: bolder;
-    margin-top: 7%;
     opacity: 1.0;
 }
 
@@ -602,16 +672,32 @@
     color: white;
     font-size: 100%;
     font-family: "Raleway";
-    margin-top: 5%;
+    /* margin-top: 5%; */
     opacity: 1.0;
 }
 
+#co2{
+    display: flex;
+    flex-direction: row;
+    /* width: 60%; */
+    align-items: center;
+    justify-content: center;
+}
 
-#co2_t1{
+
+#co2_t1, #co2_t2{
     color: white;
     font-size: 100%;
     font-family: "Raleway";
     margin-top: 5%;
     text-align: center;
     opacity: 1.0;
+}
+.personal_stat{
+    width: 100%;
+}
+
+.personal_stat img{
+    width: 30%;
+    height: 30%;
 }
