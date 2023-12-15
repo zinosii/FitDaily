@@ -99,6 +99,7 @@
                             <div id="ov3_1">
                                 Remember, it's important to approach weight and muscle mass management in a healthy, sustainable way. Drastic changes or unbalanced diets can harm your health. Always consider consulting with a healthcare provider before making significant changes to your diet or exercise regimen.
                             </div>
+                            <div style="margin: 3% 0px; width:100%;height:3px; background-color: #faa937;"></div>
                                 <div id="ov3_1_t1">Weight Loss Tips</div>
                                 <div id="ov3_2" class="ov3_stat">
                                     <div id="ov3_2_1" class="ov3_stat_1">
@@ -890,6 +891,13 @@
                         <div id="st1_t1">Statistics only for you</div>
                         <div id="st1_t2">Get valuable insights based on your exercise records.</div>
                     </div>
+                    <div id="st2">
+                        <canvas id="chart1"></canvas>
+                        <canvas id="chart2"></canvas>
+                        <canvas id="chart3"></canvas>
+                        <canvas id="chart4"></canvas>
+                    </div>
+                    
                 </div>
 
                 <!-- 6. contact -->
@@ -1905,32 +1913,11 @@
             // Create a dynamic style tag and append to the head
             var style = `<style>
                 #ov_donut_1:before {
-                    background: conic-gradient(rgba(0,0,0,0.5) 0% ${donut1_progress}%, white ${donut1_progress}% 100%);
+                    background: conic-gradient(#faa93735 0% ${donut1_progress}%, white ${donut1_progress}% 100%);
                 }
             </style>`;
 
             $('head').append(style);
-
-
-            var donut2_progress = 20; // Your progress value
-            // Create a dynamic style tag and append to the head
-            // var style = `<style>
-            //     .donut:before {
-            //         background: conic-gradient(rgba(0,0,0,0.5) 0% ${donut2_progress}%, white ${donut2_progress}% 100%);
-            //     }
-            // </style>`;
-
-            // $('head').append(style);
-
-            var donut3_progress = 20; // Your progress value
-            // Create a dynamic style tag and append to the head
-            // var style = `<style>
-            //     .donut:before {
-            //         background: conic-gradient(rgba(0,0,0,0.5) 0% ${donut3_progress}%, white ${donut3_progress}% 100%);
-            //     }
-            // </style>`;
-
-            // $('head').append(style);
 
             $('.ov3_stat').hide();
             $('#ov3_1_t1').hide();

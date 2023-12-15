@@ -172,6 +172,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 .donut:before {
@@ -182,6 +183,7 @@
     height: 100%; /* Adjust for donut thickness */
     /* Removed background property */
     z-index: 1;
+    
 }
 
 
@@ -192,6 +194,11 @@
     height: 70%;
 }
 
+#ov_donut_2, #ov_donut_3{
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
 
 .ov_content_wpr{
     margin: 2px;
@@ -199,6 +206,7 @@
     flex-direction: row;
 }
 .ov_content{
+    margin-top: 3%;
     font-family: "Raleway";
 }
 
@@ -322,7 +330,7 @@
     min-height: max(150px, 25vh);
     border-radius: 20px;
     padding: 10px;
-    margin: 0px 5px 0px 0px;
+    margin: 0px 15px 0px 0px;
     background-color: #ff950086;
     display: flex;
     flex-direction: column;
@@ -342,14 +350,22 @@
     height: max(80px, 3vh);
 }
 
-#pi2_now_1 input[type="text"], #pi2_target_1 input[type="text"] {
+#now_weight, #now_muscle, #target_weight, #target_muscle {
     padding: 8px;
-    margin: 5px;
-    width: calc(100% - 20px); /* Adjust the width as needed */
-    border: 1px solid #ccc;
+    margin: 10px 5px;
+    width: calc(100% - 30px); /* Adjust the width as needed */
+    border: 3px solid white;
     border-radius: 4px;
+    outline: none;
 }
 
+#now_weight:focus, #now_muscle:focus, #target_weight:focus, #target_muscle:focus {
+    border: 3px solid #faa937 !important;
+}
+
+.submitBtn{
+    margin-top: 5%;
+}
 /* #pi2_now_1 button, #pi2_target_1 button {
     padding: 10px 15px;
     margin: 5px;
@@ -389,7 +405,7 @@
 }
 .search-container {
     
-    margin: 10px;
+    margin: 15px;
     text-align: center;
 }
 
