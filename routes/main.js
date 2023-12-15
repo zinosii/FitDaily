@@ -25,7 +25,7 @@ module.exports = router;
 router.get('/', function(req, res, next) {
 
   //get users data, for check the new register
-  connection.query('SELECT * FROM users', (queryErr, results) => {
+  connection.query('SELECT * FROM users_data', (queryErr, results) => {
     if (queryErr) {
       console.error('Error executing query:', queryErr);
       return;

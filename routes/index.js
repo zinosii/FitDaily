@@ -58,13 +58,23 @@ router.post('/', (req, res) => {
     console.log(id,username,email,password,created_at)
 
     const dataToInsert = { id: id, username: username, email: email, password: password, created_at: created_at };
-    const query = 'INSERT INTO users SET ?';
+    const user_query = 'INSERT INTO users SET ?';
     
-    connection.query(query, dataToInsert, (error, results, fields) => {
+    connection.query(user_query, dataToInsert, (error, results, fields) => {
         if (error) throw error;
         console.log('데이터가 성공적으로 삽입되었습니다.');
-
+        const values = Array.from({ length: 1 }, (_, index) => id + index);
+        const userdata_query = `INSERT INTO users_data (id) VALUES (${values.join(', ')})`;
+        connection.query(userdata_query, (error, results, fields) => {
+            if(error){
+              console.log(error)
+            }
+            console.log('데이터가 성공적으로 삽입되었습니다.');
+        });
     });
+
+    
+
 
 
     res.send('데이터가 성공적으로 전송되었습니다.');
