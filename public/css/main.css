@@ -93,6 +93,7 @@
 /* overview */
 #ov_wpr{
     display: none;
+    height: 1000px;
 }
 #ov1{
     min-height: max(20vh,140px); /* to make reactive webpage */
@@ -286,6 +287,7 @@
 /* personal info */
 #pi_wpr{
     display:none;
+    height: 1000px;
 }
 
 #pi1{
@@ -293,7 +295,7 @@
     border-radius: 30px;
     padding: 20px;
     margin: 0px 0px 0px 20px;
-    background-image: linear-gradient(to right, #faa937aa,rgba(0, 0, 0, 0.95)),url('/assets/wo_img1.jpg'); 
+    background-image: linear-gradient(to right, #faa937aa,rgba(0, 0, 0, 0.95)),url('/assets/pi_img3.jpg'); 
     background-size: cover;
     overflow: hidden;
     background-position: center;
@@ -364,13 +366,14 @@
 /* workout */
 #wo_wpr{
     display: none;
+    height: 1000px;
 }
 #wo1{
     min-height: max(20vh,140px); /* to make reactive webpage */
     border-radius: 30px;
     padding: 20px;
     margin: 0px 0px 0px 20px;
-    background-image: linear-gradient(to right, #faa937aa,rgba(0, 0, 0, 0.95)),url('/assets/wo_img1.jpg');
+    background-image: linear-gradient(to right, #faa937aa,rgba(0, 0, 0, 0.95)),url('/assets/wo_img2.jpg');
     background-size: cover;
     overflow: hidden;
     background-position: center;
