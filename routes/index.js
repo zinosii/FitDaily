@@ -70,6 +70,7 @@ router.get('/getPData', function(req, res, next) {
   
 });
 
+
 router.use(express.urlencoded({ extended: true }));
 router.use(express.json());
 
@@ -168,6 +169,27 @@ router.post('/inserttar', (req, res) => {
 
   const UpdateQuery = 'UPDATE users SET tarweight = ?, tarmus = ? WHERE id = ?';
   const queryParams = [tarweight, tarmus, userindex];
+
+  connection.query(UpdateQuery, queryParams, (error, results, fields) => {
+    if (error) {
+      
+      return;
+    }
+
+    console.log('데이터가 성공적으로 삽입되었습니다.');
+    res.send('데이터가 성공적으로 전송되었습니다.');
+  });
+
+  
+
+});
+
+router.post('/suggestion', (req, res) => {
+  const userindex = req.body.userindex; 
+  const suggestions = req.body.suggestions; 
+
+  const UpdateQuery = 'UPDATE users SET suggestions = ? WHERE id = ?';
+  const queryParams = [suggestions, userindex];
 
   connection.query(UpdateQuery, queryParams, (error, results, fields) => {
     if (error) {

@@ -12,9 +12,9 @@
   <script src="/js/index.js" type="text/javascript"></script>
 </head>
 <body>
-  <!-- 데이터베이스에서 가져온 데이터 사용시, script 분리 -->
+  <!-- script for DB conn -->
   <script>
-    //유저데이터 가져오기
+    //fetch userdata
     var users = {{ users | safe }};
     console.log(users)
 
@@ -37,13 +37,13 @@
             //1. username
             new_username=$('#signup_username').val()
             if (Array.isArray(users) && users.length > 0) {
-              // 데이터 루프
+              
               for (var i = 0; i < users.length; i++) {
-                // Column1 값과 입력 값 비교
+                
                 if (users[i].username === new_username) {
-                  // 이미사용되는 유저네임
+                  // already exists
                   isvalidusername=0
-                  break; // 일치하는 값이 발견되면 루프 종료
+                  break; 
                 }
               }
             } else {
@@ -53,13 +53,13 @@
             //2. email
             new_email=$('#signup_email').val()
             if (Array.isArray(users) && users.length > 0) {
-              // 데이터 루프
+              
               for (var i = 0; i < users.length; i++) {
-                // Column1 값과 입력 값 비교
+
                 if (users[i].email === new_email) {
-                  // 이미사용되는 이메일
+
                   isvalidemail=0
-                  break; // 일치하는 값이 발견되면 루프 종료
+                  break; 
                 }
               }
             } else {
@@ -81,19 +81,19 @@
             if(isvalidusername && isvalidemail){
               new_password=$('#signup_pw').val()
 
-              //데이터베이스에 저장해야함 
+              //For storing
               $.ajax({
                   type: 'POST',  
-                  url: '/',  // 실제 서버 엔드포인트 URL로 변경
+                  url: '/',  
                   data: { username: new_username, email: new_email, password: new_password },
                   contentType: 'application/x-www-form-urlencoded', 
                   success: function(response) {
                     users.push({ username: new_username, email: new_email, password: new_password })
                     console.log(users)
-                      //console.log('서버 응답:', response);
+
                   },
                   error: function(error) {
-                      console.error('에러 발생:', error);
+                      console.error('error:', error);
                   }
               });
               $('#signup_div').fadeOut(400, function(){
@@ -116,14 +116,14 @@
 
         //1. check username is valid
         if (Array.isArray(users) && users.length > 0) {
-              // 데이터 루프
+
               for (var i = 0; i < users.length; i++) {
-                // Column1 값과 입력 값 비교
+
                 if (users[i].username === input_username) {
-                  // 유저네임 존재
+
                   userindex = i
                   isvaliduser = 1
-                  break; // 일치하는 값이 발견되면 루프 종료
+                  break; 
                 }
               }
             } else {
@@ -138,9 +138,10 @@
             $(login_text_username).css('visibility', 'hidden');
             $(login_text_pw).css('visibility', 'hidden');
             //login success!!!
+            alert("WELCOME! "+input_username+"!!")
             setTimeout(function() {
               window.location.href = "https://port-0-fitdaily-3szcb0g2blp6shext.sel5.cloudtype.app/main?user="+input_username;
-            }, 800);
+            }, 100);
             
 
           }

@@ -7,6 +7,7 @@ CREATE TABLE `users` (
   `tarweight` text DEFAULT NULL,
   `curmus` text DEFAULT NULL,
   `tarmus` text DEFAULT NULL,
+  `suggestions` text DEFAULT NULL,
   `created_at` text DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

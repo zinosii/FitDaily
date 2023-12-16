@@ -457,11 +457,15 @@
     /* position: relative; */
     background-color: white;
     /* text-align: center; Center-aligns the content */
-    width: 100%;
+    padding: 10px;
+    width: calc(90%-150px);
     height: 40%;
     display: flex;
     flex-direction: row;
     align-items: center;
+    opacity: 0.7;
+    border-radius: 25px 0px 25px 0px;
+    border: 3px #ffffff8b solid;
 }
 .wo_each img {
     display: block; /* Makes the image a block-level element */
@@ -488,7 +492,10 @@
     
     /* height: 100%; Set to the height of the parent */
 }
-
+.wo_each:hover{
+    background-color: #ffc779c8;
+    border: 3px #faa937 solid;
+}
 
 
 
@@ -665,6 +672,7 @@
 /* statistics */
 #st_wpr{
     display: none;
+    height: 1000px;
 }
 
 #st1{
@@ -688,6 +696,7 @@
     font-family: "Raleway";
     font-weight: bolder;
     opacity: 1.0;
+    margin-bottom: 40px;
 }
 
 #st1_t2{
@@ -699,14 +708,14 @@
 }
 
 #st2{
-    margin: 0px 0px 0px 20px;
+    margin: 50px 0px 0px 20px;
     width: 100%;
     
 }
 
 canvas {
     /* width: 100% !important; */
-    min-height: max(3vh,120px) !important;
+    min-height: max(5vh,200px) !important;
     margin-bottom: 20px;
 }
 
