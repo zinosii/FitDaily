@@ -40,8 +40,23 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/getData', function(req, res, next) {
-  //get users data, for check the new register
   connection.query('SELECT * FROM users_data', (queryErr, results) => {
+    if (queryErr) {
+      console.error('Error executing query:', queryErr);
+      return;
+    }
+  
+  const resultsString = JSON.stringify(results);
+
+  res.json(resultsString);
+  //connection.end()
+  });
+  
+});
+
+
+router.get('/getPData', function(req, res, next) {
+  connection.query('SELECT * FROM users', (queryErr, results) => {
     if (queryErr) {
       console.error('Error executing query:', queryErr);
       return;
@@ -54,7 +69,6 @@ router.get('/getData', function(req, res, next) {
   });
   
 });
-
 
 router.use(express.urlencoded({ extended: true }));
 router.use(express.json());
@@ -74,7 +88,8 @@ router.post('/', (req, res) => {
     const created_at = new Date();
     console.log(id,username,email,password,created_at)
 
-    const dataToInsert = { id: id, username: username, email: email, password: password, created_at: created_at };
+    const dataToInsert = { id: id, username: username, email: email, password: password, 
+      curweight: 60, tarweight: 60, curmus: 30, tarmus: 30, created_at: created_at };
     const user_query = 'INSERT INTO users SET ?';
     
     connection.query(user_query, dataToInsert, (error, results, fields) => {
@@ -109,6 +124,50 @@ router.post('/main', (req, res) => {
 
   const UpdateQuery = 'UPDATE users_data SET ?? = ? WHERE id = ?';
   const queryParams = [date, contents, userindex];
+
+  connection.query(UpdateQuery, queryParams, (error, results, fields) => {
+    if (error) {
+      
+      return;
+    }
+
+    console.log('데이터가 성공적으로 삽입되었습니다.');
+    res.send('데이터가 성공적으로 전송되었습니다.');
+  });
+
+  
+
+});
+
+router.post('/insertnow', (req, res) => {
+  const userindex = req.body.userindex; 
+  const curweight = req.body.curweight; 
+  const curmus = req.body.curmus; 
+
+  const UpdateQuery = 'UPDATE users SET curweight = ?, curmus = ? WHERE id = ?';
+  const queryParams = [curweight, curmus, userindex];
+
+  connection.query(UpdateQuery, queryParams, (error, results, fields) => {
+    if (error) {
+      
+      return;
+    }
+
+    console.log('데이터가 성공적으로 삽입되었습니다.');
+    res.send('데이터가 성공적으로 전송되었습니다.');
+  });
+
+  
+
+});
+
+router.post('/inserttar', (req, res) => {
+  const userindex = req.body.userindex; 
+  const tarweight = req.body.tarweight; 
+  const tarmus = req.body.tarmus; 
+
+  const UpdateQuery = 'UPDATE users SET tarweight = ?, tarmus = ? WHERE id = ?';
+  const queryParams = [tarweight, tarmus, userindex];
 
   connection.query(UpdateQuery, queryParams, (error, results, fields) => {
     if (error) {

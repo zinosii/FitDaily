@@ -224,6 +224,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    font-size: 91%;
 }
 
 
@@ -288,6 +289,11 @@
 
 #ov3_2_t1, #ov3_2_t2, #ov3_2_t3, #ov3_3_t1, #ov3_3_t2, #ov3_3_t3, #ov3_4_t1, #ov3_4_t2, #ov3_4_t3, #ov3_5_t1, #ov3_5_t2, #ov3_5_t3{
     color: white;
+    font-size: 105%;
+    font-family: "Raleway";
+}
+
+#weight, #muscle{
     font-size: 105%;
     font-family: "Raleway";
 }
@@ -366,15 +372,7 @@
 .submitBtn{
     margin-top: 5%;
 }
-/* #pi2_now_1 button, #pi2_target_1 button {
-    padding: 10px 15px;
-    margin: 5px;
-    background-color: #a16004;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-} */
+
 
 
 
@@ -698,6 +696,18 @@
     font-family: "Raleway";
     /* margin-top: 5%; */
     opacity: 1.0;
+}
+
+#st2{
+    margin: 0px 0px 0px 20px;
+    width: 100%;
+    
+}
+
+canvas {
+    /* width: 100% !important; */
+    min-height: max(3vh,120px) !important;
+    margin-bottom: 20px;
 }
 
 /* Contact */

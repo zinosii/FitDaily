@@ -3,6 +3,10 @@ CREATE TABLE `users` (
   `username` text DEFAULT NULL,
   `email` text DEFAULT NULL,
   `password` text DEFAULT NULL,
+  `curweight` text DEFAULT NULL,
+  `tarweight` text DEFAULT NULL,
+  `curmus` text DEFAULT NULL,
+  `tarmus` text DEFAULT NULL,
   `created_at` text DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
