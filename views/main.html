@@ -1464,7 +1464,7 @@
             console.log(date,String(Newdate.getDate()))
             $.ajax({
                 type: 'POST',  
-                url: '/main',  // 실제 서버 엔드포인트 URL로 변경
+                url: '/main',  
                 data: { userindex: userindex, date: date, contents: contents },
                 contentType: 'application/x-www-form-urlencoded', 
                 success: function(response) {
@@ -1537,7 +1537,7 @@
         function insertNow(curweight, curmus){
             $.ajax({
                 type: 'POST',  
-                url: '/insertnow',  // 실제 서버 엔드포인트 URL로 변경
+                url: '/insertnow',  
                 data: { userindex: userindex, curweight: curweight, curmus: curmus },
                 contentType: 'application/x-www-form-urlencoded', 
                 success: function(response) {
@@ -1553,7 +1553,7 @@
         function insertTar(tarweight, tarmus){
             $.ajax({
                 type: 'POST',  
-                url: '/inserttar',  // 실제 서버 엔드포인트 URL로 변경
+                url: '/inserttar',  
                 data: { userindex: userindex, tarweight: tarweight, tarmus: tarmus },
                 contentType: 'application/x-www-form-urlencoded', 
                 success: function(response) {
@@ -2113,7 +2113,7 @@
                 });
                 $('.wo_container').hide();
                 $('#wo_container_1').show();
-                allExercises_length = allExercises.length; // 전체 운동 수 업데이트
+                allExercises_length = allExercises.length; 
             }
             // distribute searched exercise
             function distributeExercises(matchedExercises) {
@@ -2122,7 +2122,7 @@
                     $('#wo_container_' + (Math.floor(index / 4) + 1)).append(element);
                 });
                 $('.wo_container').hide();
-                $('#wo_container_1').show(); // show the first exercise
+                $('#wo_container_1').show(); 
             }
 
             // event for searched exercise
@@ -2137,7 +2137,7 @@
                         return $(this).find('.wo_title').text().toLowerCase().includes(searchTerm);
                     });
                     distributeExercises(matchedExercises);
-                    allExercises_length = matchedExercises.length; // 검색된 운동 수 업데이트
+                    allExercises_length = matchedExercises.length; 
                 }
             });
 
@@ -2268,7 +2268,7 @@
 
                 $.ajax({
                     type: 'POST',  
-                    url: '/suggestion',  // 실제 서버 엔드포인트 URL로 변경
+                    url: '/suggestion',  
                     data: { userindex : userindex, suggestions : comment },
                     contentType: 'application/x-www-form-urlencoded', 
                     success: function(response) {

@@ -10,7 +10,7 @@ const filePath = '.env.yml';
 const fileContents = fs.readFileSync(filePath, 'utf8');
 const data = yaml.load(fileContents);
 
-// MariaDB 연결 설정
+// MariaDB 
 const connection = mysql.createConnection({
   host: data['host'],
   port: data['port'],

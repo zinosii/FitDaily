@@ -10,7 +10,7 @@ const filePath = '.env.yml';
 const fileContents = fs.readFileSync(filePath, 'utf8');
 const data = yaml.load(fileContents);
 
-// MariaDB 연결 설정
+// MariaDB 
 const connection = mysql.createConnection({
   host: data['host'],
   port: data['port'],
@@ -95,14 +95,14 @@ router.post('/', (req, res) => {
     
     connection.query(user_query, dataToInsert, (error, results, fields) => {
         if (error) throw error;
-        console.log('데이터가 성공적으로 삽입되었습니다.');
+        console.log('success');
         const values = Array.from({ length: 1 }, (_, index) => id + index);
         const userdata_query = `INSERT INTO users_data (id) VALUES (${values.join(', ')})`;
         connection.query(userdata_query, (error, results, fields) => {
             if(error){
               console.log(error)
             }
-            console.log('데이터가 성공적으로 삽입되었습니다.');
+            console.log('success');
         });
     });
 
@@ -110,7 +110,7 @@ router.post('/', (req, res) => {
 
 
 
-    res.send('데이터가 성공적으로 전송되었습니다.');
+    res.send('success');
 
     });
 
@@ -132,8 +132,8 @@ router.post('/main', (req, res) => {
       return;
     }
 
-    console.log('데이터가 성공적으로 삽입되었습니다.');
-    res.send('데이터가 성공적으로 전송되었습니다.');
+    console.log('success');
+    res.send('success');
   });
 
   
@@ -154,8 +154,8 @@ router.post('/insertnow', (req, res) => {
       return;
     }
 
-    console.log('데이터가 성공적으로 삽입되었습니다.');
-    res.send('데이터가 성공적으로 전송되었습니다.');
+    console.log('success');
+    res.send('success');
   });
 
   
@@ -176,8 +176,8 @@ router.post('/inserttar', (req, res) => {
       return;
     }
 
-    console.log('데이터가 성공적으로 삽입되었습니다.');
-    res.send('데이터가 성공적으로 전송되었습니다.');
+    console.log('success');
+    res.send('success');
   });
 
   
@@ -197,8 +197,8 @@ router.post('/suggestion', (req, res) => {
       return;
     }
 
-    console.log('데이터가 성공적으로 삽입되었습니다.');
-    res.send('데이터가 성공적으로 전송되었습니다.');
+    console.log('success');
+    res.send('success');
   });
 
   
